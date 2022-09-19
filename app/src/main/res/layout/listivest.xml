@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   android:id="@+id/invest"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content"
+                                   android:animateLayoutChanges="true"
+                                   app:cardCornerRadius="5dp"
+                                   app:cardElevation="3dp"
+                                   app:cardUseCompatPadding="true" app:cardBackgroundColor="#D9D9D9"
+                                   android:background="@drawable/borderredius">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="74dp"
+            android:animateLayoutChanges="true"
+            android:orientation="horizontal"
+            android:padding="10dp" android:backgroundTint="@color/cardBack">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="132dp"
+                android:layout_height="match_parent">
+            <TextView
+                    android:text="@string/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ListInvestName"
+                    android:textSize="18dp"/>
+            <TextView
+                    android:text="El dorado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ListNameInvestB"
+                    android:textSize="18sp"
+                    android:textColor="#000000"/>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="102dp"
+                android:layout_height="match_parent">
+            <TextView
+                    android:text="@string/Invested"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tInvestedL"
+                    android:textSize="18sp"/>
+            <TextView
+                    android:text="$2400"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/investedL"
+                    android:textSize="18sp" android:textColor="#000000"/>
+        </LinearLayout>
+        <ImageButton
+                android:layout_width="42dp"
+                android:layout_height="54dp" app:srcCompat="@drawable/ic_baseline_add_24"
+                android:id="@+id/imageButton3" android:layout_weight="1" android:contentDescription="@string/add"/>
+        <ImageButton
+                android:layout_width="39dp"
+                android:layout_height="54dp" app:srcCompat="@drawable/menos" android:id="@+id/imageButton4"
+                android:layout_weight="1" android:contentDescription="@string/Withdrawal"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

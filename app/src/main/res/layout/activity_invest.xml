@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="30dp"
+        tools:context=".Invest">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="307dp"
+            android:gravity="center"
+            android:background="@drawable/borderredius"
+            android:layout_marginBottom="10dp">
+        <TextView
+                android:text="@string/Label_name_t"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView25"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:fontFamily="@font/roboto"
+                android:textColor="#808080"
+                android:textStyle="bold"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="305dp"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:text="El dorado"
+                    android:layout_width="245dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView26"
+                    android:gravity="center"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="#000000"
+                    android:paddingStart="60dp"
+                    android:textStyle="normal" android:paddingEnd="0dp"/>
+            <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/ic_baseline_edit_24"
+                    android:id="@+id/imageButton"
+                    android:layout_weight="1"
+                    tools:ignore="TouchTargetSizeCheck"
+                    android:contentDescription="@string/Label_pasw"
+                    android:minWidth="60dp" android:maxWidth="60dp"/>
+        </LinearLayout>
+        <TextView
+                android:text="@string/tInvest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView27" android:gravity="center"
+                android:textSize="18sp" android:fontFamily="@font/roboto" android:textColor="#808080"
+                android:textStyle="bold"/>
+        <TextView
+                android:text="$25,000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView28" android:gravity="center"
+                android:textSize="18sp" android:fontFamily="@font/roboto" android:textColor="#000000"
+                android:textStyle="normal"/>
+        <TextView
+                android:text="@string/minInvest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView29" android:gravity="center"
+                android:textSize="18sp" android:fontFamily="@font/roboto" android:textColor="#808080"
+                android:textStyle="bold"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="305dp"
+                android:layout_height="28dp">
+            <TextView
+                    android:text="$1,500"
+                    android:layout_width="245dp"
+                    android:layout_height="match_parent" android:id="@+id/textView30"
+                    android:textSize="18sp" android:fontFamily="@font/roboto" android:textColor="#000000"
+                    android:paddingStart="60dp" android:gravity="center" android:textStyle="normal"
+                    android:paddingEnd="0dp"/>
+            <ImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" app:srcCompat="@drawable/ic_baseline_edit_24"
+                    android:id="@+id/imageButton2"
+                    android:layout_weight="1" android:contentDescription="@string/minInvest"
+                    tools:ignore="TouchTargetSizeCheck" android:layout_gravity="end"/>
+        </LinearLayout>
+        <TextView
+                android:text="@string/clients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView31" android:gravity="center"
+                android:textSize="18sp" android:fontFamily="@font/roboto" android:textColor="#808080"
+                android:textStyle="bold"/>
+        <TextView
+                android:text="3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView32" android:gravity="center"
+                android:textSize="18sp" android:fontFamily="@font/roboto" android:textColor="#000000"
+                android:textStyle="normal"/>
+        <TextView
+                android:text="@string/depcription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView33" android:gravity="center"
+                android:textSize="18sp" android:fontFamily="@font/roboto" android:textColor="#808080"
+                android:textStyle="bold"/>
+        <TextView
+                android:text="Inversión para contrucción de las torres el dorado en Tunja"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView34" android:gravity="center"
+                android:textSize="18sp" android:fontFamily="@font/roboto" android:textColor="#000000"
+                android:textStyle="normal"/>
+        <TextView android:text="::" android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:id="@+id/textView38"/>
+    </LinearLayout>
+    <TextView
+            android:text="@string/investimers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView35" android:layout_marginBottom="10dp"
+            android:textSize="20sp" android:textStyle="bold" android:gravity="center"/>
+    <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:background="@drawable/borderredius"/>
+</LinearLayout>
