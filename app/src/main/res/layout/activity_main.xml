@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:ems="10"
-                android:id="@+id/editTextTextPassword"
+                android:id="@+id/passw"
                 android:hint="Digite su contraseña"
                 android:minHeight="48dp"
                 android:textColor="#000000"
@@ -98,7 +98,7 @@
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="60dp" android:gravity="center">
+                android:layout_height="65dp" android:gravity="center">
             <Button
                     android:id="@+id/btnLog"
                     android:text="@string/Label_btnIngresar"

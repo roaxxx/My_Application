@@ -42,4 +42,6 @@
     <string name="editName">Editar nombre</string>
     <string name="name">Nombre</string>
     <string name="Invested">Invertido</string>
+    <string name="Contribution">Aporte</string>
+    <string name="tInvested">T.Inversión</string>
 </resources>

@@ -11,15 +11,17 @@
                                    android:background="@drawable/borderredius">
     <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="74dp"
+            android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
             android:orientation="horizontal"
-            android:padding="10dp" android:backgroundTint="@color/cardBack">
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="20dp"
+            android:backgroundTint="@color/cardBack">
 
         <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="132dp"
-                android:layout_height="match_parent">
+                android:layout_width="220dp"
+                android:layout_height="wrap_content">
             <TextView
                     android:text="@string/name"
                     android:layout_width="match_parent"
@@ -27,7 +29,7 @@
                     android:id="@+id/TextMov"
                     android:textSize="18dp"/>
             <TextView
-                    android:text="El dorado"
+                    android:text="William Fernando Roa Vargas"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/ListNameClientB"
@@ -36,10 +38,10 @@
         </LinearLayout>
         <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="102dp"
+                android:layout_width="100dp"
                 android:layout_height="match_parent">
             <TextView
-                    android:text="@string/Invested"
+                    android:text="@string/Contribution"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/tClientInvest"
@@ -51,13 +53,5 @@
                     android:id="@+id/investedClient"
                     android:textSize="18sp" android:textColor="#000000"/>
         </LinearLayout>
-        <ImageButton
-                android:layout_width="42dp"
-                android:layout_height="54dp" app:srcCompat="@drawable/ic_baseline_add_24"
-                android:id="@+id/imageButton3" android:layout_weight="1" android:contentDescription="@string/add"/>
-        <ImageButton
-                android:layout_width="39dp"
-                android:layout_height="54dp" app:srcCompat="@drawable/menos" android:id="@+id/imageButton4"
-                android:layout_weight="1" android:contentDescription="@string/Withdrawal"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

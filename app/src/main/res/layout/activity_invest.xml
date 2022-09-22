@@ -111,15 +111,13 @@
                 android:layout_height="wrap_content" android:id="@+id/textView34" android:gravity="center"
                 android:textSize="18sp" android:fontFamily="@font/roboto" android:textColor="#000000"
                 android:textStyle="normal"/>
-        <TextView android:text="::" android:layout_width="match_parent" android:layout_height="wrap_content"
-                  android:id="@+id/textView38"/>
     </LinearLayout>
     <TextView
             android:text="@string/investimers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/textView35" android:layout_marginBottom="10dp"
             android:textSize="20sp" android:textStyle="bold" android:gravity="center"/>
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent" android:background="@drawable/borderredius"/>
+            android:layout_height="match_parent" android:id="@+id/ListClients"/>
 </LinearLayout>
