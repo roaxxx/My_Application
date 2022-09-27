@@ -7,35 +7,50 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import android.widget.Toast.*
 import com.android.volley.Request
 import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import org.json.JSONObject
 
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val btnLog = findViewById<Button>(R.id.btnLog)
         val user:EditText = findViewById(R.id.userName)
-         val passw:EditText =findViewById(R.id.passw)
-
+        val passw:EditText =findViewById(R.id.passw)
+        var roll:String? = null
         btnLog.setOnClickListener{
-            val url ="http://192.168.10.14/API_REST_BD_CON/insert.php"
-            val queue= Volley.newRequestQueue(this)
-            Toast.makeText(this,url,Toast.LENGTH_LONG).show()
-            Toast.makeText(this,user.text.toString(),Toast.LENGTH_LONG).show()
-            var result = object : StringRequest(
+            val queue = Volley.newRequestQueue(this)
+            val url ="http://192.168.10.14:8081/API_REST_BD_CON/select.php"
+            val result = object : StringRequest(
                 Request.Method.POST,url,
-            Response.Listener<String> { response ->
-            },Response.ErrorListener{ error ->
-                    Toast.makeText(this, "error $error", Toast.LENGTH_LONG).show()
+                Response.Listener<String> { response ->
+                    roll = response
+                    var intent:Intent?
+                    if(roll.equals("admin")){
+                        intent=Intent(this, FondMain::class.java)
+                    }else if(roll.equals("cliente")){
+                        intent=Intent(this, clientActivity1::class.java)
+                    }else if(roll.equals("invest")){
+                        intent=Intent(this, Invest::class.java)
+                    }else{
+                        intent=Intent(this, MainActivity::class.java)
+                    }
+                    intent.putExtra("user", user.text.toString())
+                    startActivity(intent)
+                },Response.ErrorListener{ error ->
+                    Toast.makeText(this, "Contraseña incorrecta", Toast.LENGTH_LONG).show()
                 }){
                 override fun getParams(): MutableMap<String, String>? {
                     val paramss = HashMap<String,String>()
                     paramss.put("name",user?.text.toString())
-                    paramss.put("pasw",passw?.text.toString())
+                    paramss.put("passw",passw?.text.toString())
                     return paramss
                 }
             }
