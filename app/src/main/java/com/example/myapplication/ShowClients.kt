@@ -66,12 +66,17 @@ class ShowClients : AppCompatActivity() {
     //Función para inciar el recylcerView con los clientes
     fun setRecyclerView(sClients: MutableList<ListCAE>) {
         val recyclerView = findViewById<RecyclerView>(R.id.ListShowC)
-        adapter = ListAAShowClient(sClients,{onItemSelected(it)})
+        adapter = ListAAShowClient(
+            sClients,
+            onClickListener = {ListCAE -> onItemSelected(ListCAE)},
+            onClickDelete = {position -> deleteSelected(position)})
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
     }
     private fun onItemSelected(ListCAE:ListCAE){
         Toast.makeText(this,ListCAE.cName,Toast.LENGTH_SHORT).show()
-
+    }
+    private fun deleteSelected(position:Int){
+        Toast.makeText(this,"$position acá",Toast.LENGTH_SHORT).show()
     }
 }
