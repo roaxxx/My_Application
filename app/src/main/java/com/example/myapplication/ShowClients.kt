@@ -14,10 +14,12 @@ import com.android.volley.toolbox.Volley
 import com.example.myapplication.ModelDAO.ListCAE
 import com.example.myapplication.modelRWAdapter.ListAAShowClient
 import org.json.JSONException
+import kotlin.properties.Delegates
 
 class ShowClients : AppCompatActivity() {
     private var sClients = mutableListOf<ListCAE>()
     private lateinit var adapter:ListAAShowClient
+    private lateinit var numClients:TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_clients)
@@ -25,6 +27,7 @@ class ShowClients : AppCompatActivity() {
         var tFont=findViewById<TextView>(R.id.tFont3)
         var numClients=findViewById<TextView>(R.id.numClients3)
         var numInvest=findViewById<TextView>(R.id.numInvest3)
+        numClients=findViewById<TextView>(R.id.numClients3)
         //Conexión a MySQL
         val queue = Volley.newRequestQueue(this)
         val url = "http://192.168.10.14:8081/API_REST_BD_CON/fontDetail.php"
@@ -50,7 +53,8 @@ class ShowClients : AppCompatActivity() {
                     var jsonArray=response.getJSONArray("data")
                     for(i in 0 until jsonArray.length()){
                         var jsonObject=jsonArray.getJSONObject(i)
-                        sClients.add(ListCAE(jsonObject.getString("name"),
+                        sClients.add(ListCAE(jsonObject.getString("id_card"),
+                                            jsonObject.getString("name"),
                                             jsonObject.getString("tMoney")))
                     }
                     setRecyclerView(sClients)
@@ -77,6 +81,8 @@ class ShowClients : AppCompatActivity() {
         Toast.makeText(this,ListCAE.cName,Toast.LENGTH_SHORT).show()
     }
     private fun deleteSelected(position:Int){
-        Toast.makeText(this,"$position acá",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,sClients.get(position).idCard,Toast.LENGTH_SHORT).show()
+        sClients.removeAt(position)
+        adapter.notifyItemRemoved(position)
     }
 }
