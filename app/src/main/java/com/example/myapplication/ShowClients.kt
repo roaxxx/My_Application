@@ -13,8 +13,11 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.myapplication.ModelDAO.ListCAE
 import com.example.myapplication.modelRWAdapter.ListAAShowClient
+import org.json.JSONException
 
 class ShowClients : AppCompatActivity() {
+    private var sClients = mutableListOf<ListCAE>()
+    private lateinit var adapter:ListAAShowClient
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_clients)
@@ -29,8 +32,8 @@ class ShowClients : AppCompatActivity() {
             Request.Method.GET,url,null,
             { response ->
                 tFont.text=response.getString("tMoney")
-                numClients.setText(response.getString("clients"))
-                numInvest.setText(response.getString("investss"))
+                numClients.text=response.getString("clients")
+                numInvest.text=response.getString("investss")
             }, {error->
                 Toast.makeText(this,"$error ahhh", Toast.LENGTH_LONG).show()
             })
@@ -38,15 +41,37 @@ class ShowClients : AppCompatActivity() {
         scAddClients.setOnClickListener{
             startActivity(Intent(this,add_Client::class.java))
         }
-        val recyclerView = findViewById<RecyclerView>(R.id.ListShowC)
-        var sClients = mutableListOf<ListCAE>()
-        sClients.add(ListCAE("William Fernando Roa Vargas","2500"))
-        sClients.add(ListCAE("Luisa Fernanda Albarracín Mendoza","2500"))
-        sClients.add(ListCAE("Eduard Camilo Ortega Sánchez","3500"))
-        sClients.add(ListCAE("Santiago Alejandro Caro Cárdenas","1500"))
-        val adapter = ListAAShowClient(sClients)
 
+        val url2 = "http://192.168.10.14:8081/API_REST_BD_CON/ashowclients.php"
+        val jsRequest2 = JsonObjectRequest(
+            Request.Method.GET,url2,null,
+            { response ->
+                try{
+                    var jsonArray=response.getJSONArray("data")
+                    for(i in 0 until jsonArray.length()){
+                        var jsonObject=jsonArray.getJSONObject(i)
+                        sClients.add(ListCAE(jsonObject.getString("name"),
+                                            jsonObject.getString("tMoney")))
+                    }
+                    setRecyclerView(sClients)
+                }
+                catch (e: JSONException){
+                    Toast.makeText(this,"$e", Toast.LENGTH_LONG).show()
+                }
+            }, {error->
+                Toast.makeText(this,"$error ahhh", Toast.LENGTH_LONG).show()
+            })
+        queue.add(jsRequest2)
+    }
+    //Función para inciar el recylcerView con los clientes
+    fun setRecyclerView(sClients: MutableList<ListCAE>) {
+        val recyclerView = findViewById<RecyclerView>(R.id.ListShowC)
+        adapter = ListAAShowClient(sClients,{onItemSelected(it)})
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
+    }
+    private fun onItemSelected(ListCAE:ListCAE){
+        Toast.makeText(this,ListCAE.cName,Toast.LENGTH_SHORT).show()
+
     }
 }

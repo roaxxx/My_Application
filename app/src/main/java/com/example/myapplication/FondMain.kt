@@ -24,11 +24,9 @@ class FondMain : AppCompatActivity() {
         //Conexión a MySQL
         val queue = Volley.newRequestQueue(this)
         val url = "http://192.168.10.14:8081/API_REST_BD_CON/fontDetail.php"
-        Toast.makeText(this,url, Toast.LENGTH_LONG).show()
         val jsRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
             { response ->
-                Toast.makeText(this,"Este", Toast.LENGTH_LONG).show()
                 tFont.text=response.getString("tMoney")
                 numClients.setText(response.getString("clients"))
                 numInvest.setText(response.getString("investss"))

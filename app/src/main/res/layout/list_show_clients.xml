@@ -53,11 +53,17 @@
         </LinearLayout>
         <ImageButton
                 android:layout_width="40dp"
-                android:layout_height="match_parent" app:srcCompat="@drawable/ic_baseline_edit_24"
-                android:id="@+id/imageButton3" android:layout_weight="1" android:contentDescription="@string/add"/>
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/ic_baseline_edit_24"
+                android:id="@+id/btnEdit"
+                android:layout_weight="1"
+                android:contentDescription="@string/Edit"/>
         <ImageButton
                 android:layout_width="40dp"
-                android:layout_height="match_parent" app:srcCompat="@drawable/delete" android:id="@+id/imageButton4"
-                android:layout_weight="1" android:contentDescription="@string/Withdrawal"/>
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/delete"
+                android:id="@+id/btnDelete"
+                android:layout_weight="1"
+                android:contentDescription="@string/delete"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

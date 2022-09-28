@@ -19,7 +19,7 @@ class MovsListAdapter(movH: MutableList<MovsListDao>) : RecyclerView.Adapter<Mov
         return movH.size
     }
     override fun onBindViewHolder(holder: ViewHolder, i: Int) {
-        holder.textH.text=movH.get(i).getMovClient()
+        holder.textH.text=movH.get(i).movClient
     }
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {

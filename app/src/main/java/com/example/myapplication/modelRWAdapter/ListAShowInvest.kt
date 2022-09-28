@@ -19,8 +19,8 @@ class ListAShowInvest(sInvest:MutableList<ListIAnvestE>) : RecyclerView.Adapter<
         return sInvest .size
     }
     override fun onBindViewHolder(holder: ViewHolder, i: Int) {
-        holder.name.text=sInvest .get(i).getNameI()
-        holder.invested.text=sInvest.get(i).getVInvested()
+        holder.name.text=sInvest .get(i).nameI
+        holder.invested.text=sInvest.get(i).vInvested
     }
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         var name: TextView

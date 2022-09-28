@@ -23,8 +23,8 @@ class ListALInvest(invest: MutableList<ListInvestE>) : RecyclerView.Adapter<List
     }
 
     override fun onBindViewHolder(holder: ViewHolder, i: Int) {
-        holder.name.text=investt.get(i).getNameInvest()
-        holder.invested.text=investt.get(i).getValInvest()
+        holder.name.text=investt.get(i).nameIvest
+        holder.invested.text=investt.get(i).valInves
     }
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         var name: TextView

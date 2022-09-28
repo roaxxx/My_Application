@@ -21,8 +21,8 @@ class ListALClient(client: MutableList<ListClientE>): RecyclerView.Adapter<ListA
     }
 
     override fun onBindViewHolder(holder: ViewHolder, i: Int) {
-        holder.name.text = client.get(i).getIName()
-        holder.invested.text = client.get(i).getIVal()
+        holder.name.text = client.get(i).iNamee
+        holder.invested.text = client.get(i).iNamee
     }
     // Elementos de la tupla
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

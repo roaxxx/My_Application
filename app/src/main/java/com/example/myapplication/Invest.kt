@@ -11,6 +11,7 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.myapplication.ModelDAO.ListClientE
 import com.example.myapplication.modelRWAdapter.ListALClient
+import org.json.JSONException
 
 class Invest : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,9 +27,7 @@ class Invest : AppCompatActivity() {
         var iDescrip=findViewById<TextView>(R.id.iDescrip)
         //Conexión a la API
         val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.10.14:8081/API_REST_BD_CON/showInvest.php?id=$idInvest"
-        nameI.text=url;
-        Toast.makeText(this,url, Toast.LENGTH_LONG).show()
+        val url = "http://192.168.10.14/API_REST_BD_CON/showInvest.php?id=$idInvest"
         val jsRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
             { response ->
@@ -41,15 +40,28 @@ class Invest : AppCompatActivity() {
             }, {error->
                 Toast.makeText(this,"$error ahhh", Toast.LENGTH_LONG).show()
             })
-        queue.add(jsRequest)
         var clients = mutableListOf<ListClientE>()
-        clients.add(ListClientE("William Fernando Roa Vargas","2500"))
-        clients.add(ListClientE("Luisa Fernanda Albarracín Mendoza","2500"))
-        clients.add(ListClientE("Eduard Camilo Ortega Sánchez","3500"))
-        clients.add(ListClientE("Santiago Alejandro Caro Cárdenas","1500"))
-        val adapter = ListALClient(clients)
+        val url2 = "http://10.100.2.90:8081/API_REST_BD_CON/ashowclients.php"
+        val jsRequest2 = JsonObjectRequest(
+            Request.Method.GET,url2,null,
+            { response ->
+                try{
+                    var jsonArray=response.getJSONArray("data")
+                    for(i in 0 until jsonArray.length()){
+                        var jsonObject=jsonArray.getJSONObject(i)
+                        clients.add(ListClientE(jsonObject.getString("name"),jsonObject.getString("invested_money")))
+                        val adapter = ListALClient(clients)
 
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = adapter
+                        recyclerView.layoutManager = LinearLayoutManager(this)
+                        recyclerView.adapter = adapter
+                    }
+                }
+                catch (e: JSONException){
+                    Toast.makeText(this,"$e", Toast.LENGTH_LONG).show()
+                }
+            }, {error->
+                Toast.makeText(this,"$error ahhh", Toast.LENGTH_LONG).show()
+            })
+        queue.add(jsRequest2)
     }
 }
