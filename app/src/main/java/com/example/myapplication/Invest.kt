@@ -27,7 +27,7 @@ class Invest : AppCompatActivity() {
         var iDescrip=findViewById<TextView>(R.id.iDescrip)
         //Conexión a la API
         val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.10.14/API_REST_BD_CON/showInvest.php?id=$idInvest"
+        val url = "http://192.168.10.14:8081/API_REST_BD_CON/investiment/showinvest.php?id=$idInvest"
         val jsRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
             { response ->
@@ -41,7 +41,7 @@ class Invest : AppCompatActivity() {
                 Toast.makeText(this,"$error ahhh", Toast.LENGTH_LONG).show()
             })
         var clients = mutableListOf<ListClientE>()
-        val url2 = "http://10.100.2.90:8081/API_REST_BD_CON/ashowclients.php"
+        val url2 = "http://192.168.10.14:8081/API_REST_BD_CON/investiment/invesShowClient.php?id=$idInvest"
         val jsRequest2 = JsonObjectRequest(
             Request.Method.GET,url2,null,
             { response ->

@@ -28,10 +28,9 @@ class clientActivity1 : AppCompatActivity() {
         var invested=findViewById<TextView>(R.id.invertido)
         var age=findViewById<TextView>(R.id.age_view)
 
-        nameC?.text="Si se pudo pa"
         //Conexión a la API
         val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.10.14:8081/API_REST_BD_CON/showClient.php?name=$idCard"
+        val url = "http://192.168.10.14:8081/API_REST_BD_CON/client/showclient.php?name=$idCard"
         val jsRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
             { response ->
@@ -40,7 +39,7 @@ class clientActivity1 : AppCompatActivity() {
                 invested.setText(response.getString("invested_money"))
                 age.text=response.getString("age")
             }, {error->
-                Toast.makeText(this,"$error ahhh",Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"$error",Toast.LENGTH_LONG).show()
             })
         queue.add(jsRequest)
         showH.setOnClickListener{

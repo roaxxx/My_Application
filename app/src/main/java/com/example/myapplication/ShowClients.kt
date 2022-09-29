@@ -30,7 +30,7 @@ class ShowClients : AppCompatActivity() {
         numClients=findViewById<TextView>(R.id.numClients3)
         //Conexión a MySQL
         val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.10.14:8081/API_REST_BD_CON/fontDetail.php"
+        val url = "http://192.168.10.14:8081/API_REST_BD_CON/admin/fontDetail.php"
         val jsRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
             { response ->
@@ -45,7 +45,7 @@ class ShowClients : AppCompatActivity() {
             startActivity(Intent(this,add_Client::class.java))
         }
 
-        val url2 = "http://192.168.10.14:8081/API_REST_BD_CON/ashowclients.php"
+        val url2 = "http://192.168.10.14:8081/API_REST_BD_CON/admin/clients/ashowclients.php"
         val jsRequest2 = JsonObjectRequest(
             Request.Method.GET,url2,null,
             { response ->

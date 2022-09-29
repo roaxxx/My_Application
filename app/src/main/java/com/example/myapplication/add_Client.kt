@@ -23,7 +23,7 @@ class add_Client : AppCompatActivity() {
         val ageClient: EditText = findViewById(R.id.ageClient)
         addClient.setOnClickListener {
             val queue = Volley.newRequestQueue(this)
-            val url ="http://192.168.10.14:8081/API_REST_BD_CON/createClient.php"
+            val url ="http://192.168.10.14:8081/API_REST_BD_CON/admin/clients/createclient.php"
             val result = object : StringRequest(
                 Request.Method.POST,url,
                 Response.Listener<String> { response ->

@@ -23,7 +23,7 @@ class FondMain : AppCompatActivity() {
         var numInvest=findViewById<TextView>(R.id.numInvest)
         //Conexión a MySQL
         val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.10.14:8081/API_REST_BD_CON/fontDetail.php"
+        val url = "http://192.168.10.14:8081/API_REST_BD_CON/admin/fontDetail.php"
         val jsRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
             { response ->
