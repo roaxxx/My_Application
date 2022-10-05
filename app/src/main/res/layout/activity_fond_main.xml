@@ -28,7 +28,6 @@
                 android:layout_marginTop="3dp"
                 android:gravity="center"/>
         <TextView
-                android:text="$137.000"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/tFont"
@@ -51,7 +50,6 @@
                 android:layout_marginTop="3dp"
                 android:gravity="center"/>
         <TextView
-                android:text="125"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/numClients"
@@ -74,7 +72,6 @@
                 android:layout_marginTop="3dp"
                 android:gravity="center"/>
         <TextView
-                android:text="18"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/numInvest"

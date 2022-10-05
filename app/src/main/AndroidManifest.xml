@@ -1,116 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.myapplication" >
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-    <application
-        android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
-        android:usesCleartextTraffic="true"
-        android:icon="@drawable/eye"
-        android:label="@string/app_name"
-        android:roundIcon="@drawable/ic_baseline_add_24"
-        android:supportsRtl="true"
-        tools:targetApi="31" >
-        <activity
-            android:name=".EditIvestName"
-            android:exported="false"
-            android:label="@string/editName"
-            android:parentActivityName=".Invest"
-            android:theme="@style/Theme.MyApplication3" />
-        <activity
-            android:name=".EditInvestMinVal"
-            android:exported="false"
-            android:label="@string/MinValToInvest"
-            android:parentActivityName=".Invest"
-            android:theme="@style/Theme.MyApplication3" />
-        <activity
-            android:name=".showClientMovs"
-            android:exported="false"
-            android:label="@string/Hmovs"
-            android:parentActivityName=".clientActivity1"
-            android:theme="@style/Theme.MyApplication1" />
-        <activity
-            android:name=".FondWithDr"
-            android:exported="false"
-            android:label="@string/RetFond"
-            android:parentActivityName=".clientActivity1"
-            android:theme="@style/Theme.MyApplication1" />
-        <activity
-            android:name=".add_FondMoney"
-            android:exported="false"
-            android:label="@string/addFondMoneyY"
-            android:parentActivityName=".clientActivity1"
-            android:theme="@style/Theme.MyApplication1" />
-        <activity
-            android:name=".investment_withdrawal"
-            android:exported="false"
-            android:label="@string/investWithD"
-            android:parentActivityName=".clientActivity1"
-            android:theme="@style/Theme.MyApplication1" />
-        <activity
-            android:name=".add_investMoney"
-            android:exported="false"
-            android:label="@string/addInvMoney"
-            android:parentActivityName=".clientActivity1"
-            android:theme="@style/Theme.MyApplication1" />
-        <activity
-            android:name=".Invest"
-            android:exported="false"
-            android:label="@string/Label_investiments"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.MyApplication3" />
-        <activity
-            android:name=".show_Invest"
-            android:exported="false"
-            android:label="@string/Label_investiments"
-            android:parentActivityName=".FondMain"
-            android:theme="@style/Theme.MyApplication3" />
-        <activity
-            android:name=".ShowClients"
-            android:exported="false"
-            android:label="@string/fond_main"
-            android:parentActivityName=".FondMain"
-            android:theme="@style/Theme.MyApplication2" />
-        <activity
-            android:name=".add_invest"
-            android:exported="false"
-            android:label="@string/addInvest"
-            android:parentActivityName=".FondMain"
-            android:theme="@style/Theme.MyApplication3" />
-        <activity
-            android:name=".add_Client"
-            android:exported="false"
-            android:label="@string/addInvestimer"
-            android:parentActivityName=".FondMain"
-            android:theme="@style/Theme.MyApplication2" />
-        <activity
-            android:name=".FondMain"
-            android:exported="false"
-            android:label="@string/fond_main"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.MyApplication2" />
-        <activity
-            android:name=".clientActivity1"
-            android:exported="false"
-            android:label="@string/client_details"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.MyApplication1" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.MyApplication" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.example.myapplication">
 
-                <category android:name="android.intent.category.LAUNCHER" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+            android:allowBackup="true"
+            android:dataExtractionRules="@xml/data_extraction_rules"
+            android:fullBackupContent="@xml/backup_rules"
+            android:icon="@drawable/eye"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/ic_baseline_add_24"
+            android:supportsRtl="true"
+            android:usesCleartextTraffic="true"
+            tools:targetApi="31">
+        <activity
+                android:label="@string/EditName"
+                android:theme="@style/Theme.MyApplication3"
+                android:parentActivityName=".Invest"
+                android:name=".EditNameI"
+                android:exported="false"/>
+        <activity
+                android:name=".Detail_Client"
+                android:exported="false"
+                android:label="@string/cclient_detail"
+                android:theme="@style/Theme.MyApplication1"/>
+        <activity
+                android:name=".Detail_Invest"
+                android:exported="false"
+                android:label="@string/Invest_detail"
+                android:theme="@style/Theme.MyApplication3"/>
+        <activity
+                android:name=".EditIvestName"
+                android:exported="false"
+                android:label="@string/editName"
+                android:parentActivityName=".Invest"
+                android:theme="@style/Theme.MyApplication3"/>
+        <activity
+                android:name=".EditInvestMinVal"
+                android:exported="false"
+                android:label="@string/MinValToInvest"
+                android:parentActivityName=".Invest"
+                android:theme="@style/Theme.MyApplication3"/>
+        <activity
+                android:name=".showClientMovs"
+                android:exported="false"
+                android:label="@string/Hmovs"
+                android:parentActivityName=".clientActivity1"
+                android:theme="@style/Theme.MyApplication1"/>
+        <activity
+                android:name=".FondWithDr"
+                android:exported="false"
+                android:label="@string/RetFond"
+                android:parentActivityName=".clientActivity1"
+                android:theme="@style/Theme.MyApplication1"/>
+        <activity
+                android:name=".add_FondMoney"
+                android:exported="false"
+                android:label="@string/addFondMoneyY"
+                android:parentActivityName=".clientActivity1"
+                android:theme="@style/Theme.MyApplication1"/>
+        <activity
+                android:name=".investment_withdrawal"
+                android:exported="false"
+                android:label="@string/investWithD"
+                android:parentActivityName=".clientActivity1"
+                android:theme="@style/Theme.MyApplication1"/>
+        <activity
+                android:name=".add_investMoney"
+                android:exported="false"
+                android:label="@string/addInvMoney"
+                android:parentActivityName=".clientActivity1"
+                android:theme="@style/Theme.MyApplication1"/>
+        <activity
+                android:name=".Invest"
+                android:exported="false"
+                android:label="@string/Label_investiments"
+                android:parentActivityName=".MainActivity"
+                android:theme="@style/Theme.MyApplication3"/>
+        <activity
+                android:name=".show_Invest"
+                android:exported="false"
+                android:label="@string/Label_investiments"
+                android:parentActivityName=".FondMain"
+                android:theme="@style/Theme.MyApplication3"/>
+        <activity
+                android:name=".ShowClients"
+                android:exported="false"
+                android:label="@string/fond_main"
+                android:parentActivityName=".FondMain"
+                android:theme="@style/Theme.MyApplication2"/>
+        <activity
+                android:name=".add_invest"
+                android:exported="false"
+                android:label="@string/addInvest"
+                android:parentActivityName=".FondMain"
+                android:theme="@style/Theme.MyApplication3"/>
+        <activity
+                android:name=".add_Client"
+                android:exported="false"
+                android:label="@string/addInvestimer"
+                android:parentActivityName=".FondMain"
+                android:theme="@style/Theme.MyApplication2"/>
+        <activity
+                android:name=".FondMain"
+                android:exported="false"
+                android:label="@string/fond_main"
+                android:parentActivityName=".MainActivity"
+                android:theme="@style/Theme.MyApplication2"/>
+        <activity
+                android:name=".clientActivity1"
+                android:exported="false"
+                android:label="@string/client_details"
+                android:parentActivityName=".MainActivity"
+                android:theme="@style/Theme.MyApplication1"/>
+        <activity
+                android:name=".MainActivity"
+                android:exported="true"
+                android:theme="@style/Theme.MyApplication">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
         <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+                android:name="preloaded_fonts"
+                android:resource="@array/preloaded_fonts"/>
     </application>
 
 </manifest>

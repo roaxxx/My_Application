@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         var roll:String? = null
         btnLog.setOnClickListener{
             val queue = Volley.newRequestQueue(this)
-            val url ="http://192.168.10.14:8081/API_REST_BD_CON/select.php"
+            val url ="http://192.168.10.16:8081/API_REST_BD_CON/select.php"
             val result = object : StringRequest(
                 Request.Method.POST,url,
                 Response.Listener<String> { response ->
@@ -40,12 +40,13 @@ class MainActivity : AppCompatActivity() {
                     }else if(roll.equals("invest")){
                         intent=Intent(this, Invest::class.java)
                     }else{
+                        Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_LONG).show()
                         intent=Intent(this, MainActivity::class.java)
                     }
                     intent.putExtra("user", user.text.toString())
                     startActivity(intent)
                 },Response.ErrorListener{ error ->
-                    Toast.makeText(this, "Contraseña incorrecta", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Sin conexión", Toast.LENGTH_LONG).show()
                 }){
                 override fun getParams(): MutableMap<String, String>? {
                     val paramss = HashMap<String,String>()

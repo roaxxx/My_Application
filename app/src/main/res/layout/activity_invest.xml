@@ -45,7 +45,7 @@
                     android:layout_width="0dp"
                     android:layout_height="30dp"
                     app:srcCompat="@drawable/ic_baseline_edit_24"
-                    android:id="@+id/imageButton"
+                    android:id="@+id/editIName"
                     android:layout_weight="1"
                     tools:ignore="TouchTargetSizeCheck"
                     android:contentDescription="@string/Label_pasw"
@@ -83,7 +83,7 @@
             <ImageButton
                     android:layout_width="0dp"
                     android:layout_height="wrap_content" app:srcCompat="@drawable/ic_baseline_edit_24"
-                    android:id="@+id/imageButton2"
+                    android:id="@+id/editMinVal"
                     android:layout_weight="1" android:contentDescription="@string/minInvest"
                     tools:ignore="TouchTargetSizeCheck" android:layout_gravity="end"/>
         </LinearLayout>

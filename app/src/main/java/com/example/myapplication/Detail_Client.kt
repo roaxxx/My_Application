@@ -3,7 +3,6 @@ package com.example.myapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,27 +10,31 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.example.myapplication.ModelDAO.Investimentss
 import com.example.myapplication.ModelDAO.ListInvestE
 import com.example.myapplication.modelRWAdapter.ListALInvest
+import com.example.myapplication.modelRWAdapter.inAdapter
 import org.json.JSONException
 
-class clientActivity1 : AppCompatActivity() {
-    private var invest = mutableListOf<ListInvestE>()
-    private lateinit var adapter:ListALInvest
-    override fun onCreate(savedInstanceState: Bundle?) {
+class Detail_Client : AppCompatActivity() {
+    private var investss = mutableListOf<Investimentss>()
+    private lateinit var adapter: inAdapter
+    private lateinit var idCard: String
 
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_client1)
-        val showH = findViewById<Button>(R.id.view_h)
+        setContentView(R.layout.activity_detail_client)
         val bundle= intent.extras
-        val idCard =bundle?.getString("user")
+        idCard = bundle?.getString("user").toString()
+        showClientDetail()
+        getClientInvestiments()
+    }
+    //Obtiene y asigna detalles del cliente seleccionado
+    private fun showClientDetail() {
         var nameC= findViewById<TextView>(R.id.name_client)
         var tCap= findViewById<TextView>(R.id.cap_fond)
         var invested= findViewById<TextView>(R.id.invertido)
         var age= findViewById<TextView>(R.id.age_view)
-
-
-        //Conexión a la API
         val queue = Volley.newRequestQueue(this)
         val url = "http://192.168.10.16:8081/API_REST_BD_CON/client/showclient.php?name=$idCard"
         val jsRequest = JsonObjectRequest(
@@ -42,13 +45,12 @@ class clientActivity1 : AppCompatActivity() {
                 invested.setText(response.getString("invested_money"))
                 age.text=response.getString("age")
             }, {error->
-                Toast.makeText(this,"$error",Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"$error", Toast.LENGTH_LONG).show()
             })
         queue.add(jsRequest)
-        showH.setOnClickListener{
-            startActivity(Intent(this,showClientMovs::class.java))
-        }
-
+    }
+    private fun getClientInvestiments() {
+        val queue = Volley.newRequestQueue(this)
         val url2 = "http://192.168.10.16:8081/API_REST_BD_CON/client/cinvest.php?idCard=$idCard"
         val jsRequest2 = JsonObjectRequest(
             Request.Method.GET,url2,null,
@@ -57,40 +59,33 @@ class clientActivity1 : AppCompatActivity() {
                     var jsonArray=response.getJSONArray("data")
                     for(i in 0 until jsonArray.length()){
                         var jsonObject=jsonArray.getJSONObject(i)
-                        invest.add(
-                            ListInvestE(jsonObject.getString("id_investiment"),
-                                jsonObject.getString("name_investiment"),
-                                jsonObject.getString("invested")
+                        if(!jsonObject.getString("id_investiment").equals("null")){
+                            investss.add(
+                                Investimentss(jsonObject.getString("id_investiment"),
+                                    jsonObject.getString("name_investiment"),
+                                    jsonObject.getString("invested")
+                                )
                             )
-                        )
+                        }
                     }
-                    initRecyclerView(invest)
+                    initRecyclerView(investss)
                 }
                 catch (e: JSONException){
                     Toast.makeText(this,"aa$e", Toast.LENGTH_LONG).show()
                 }
             }, {error->
-                Toast.makeText(this,"i$error", Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"El cliente no ha invertido", Toast.LENGTH_LONG).show()
             })
         queue.add(jsRequest2)
     }
-    //Inicializa el recyclerView con mutableList
-    fun initRecyclerView(invest: MutableList<ListInvestE>) {
+
+    //Iniciar recyclerView
+    private fun initRecyclerView(investss: MutableList<Investimentss>) {
         val recyclerView = findViewById<RecyclerView>(R.id.listRecyclerView)
-        adapter = ListALInvest(
-            this.invest,
-            onClickListener = { i -> addMoney(i)},
-            onClickDelete = { i -> withdrawMoney(i)}
-            )
+        adapter = inAdapter(
+            this.investss
+        )
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
-    }
-    //Devuelve una posición especifica en la cual se encuentra una inversión:Para invertir
-    fun addMoney(i:Int){
-        Toast.makeText(this,"$i",Toast.LENGTH_SHORT).show()
-    }
-    //Devuelve una posición especifica en la cual se encuentra una inversión:Para retirar
-    fun withdrawMoney(i:Int){
-        Toast.makeText(this,"$i",Toast.LENGTH_SHORT).show()
     }
 }

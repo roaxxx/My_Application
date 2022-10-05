@@ -25,10 +25,10 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/e_mailI"
             android:background="@drawable/borderredius" android:minHeight="48dp" android:hint="E-mail asociado"/>
     <TextView
-            android:text="@string/descInvest"
+            android:text="@string/investttName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/textView15" android:textSize="20sp"
             android:textStyle="bold" android:fontFamily="@font/roboto" android:textColor="#000000"
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editTextTextPersonName7" android:background="@drawable/borderredius"
+            android:id="@+id/etNInvest" android:background="@drawable/borderredius"
             android:minHeight="48dp" android:hint="Nombre de la invesión"/>
     <TextView
             android:text="@string/Label_pasw"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/editTextTextPassword3" android:background="@drawable/borderredius"
+            android:id="@+id/etPasswI" android:background="@drawable/borderredius"
             android:hint="Digite una nueva contraseña" android:minHeight="48dp"/>
     <TextView
             android:text="@string/min_invest"
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/editTextNumber" android:background="@drawable/borderredius" android:minHeight="48dp"
+            android:id="@+id/etminVal" android:background="@drawable/borderredius" android:minHeight="48dp"
             android:hint="Min inversión"/>
     <TextView
             android:text="@string/descInvest"
@@ -78,12 +78,12 @@
             android:inputType="textMultiLine"
             android:gravity="start|top"
             android:ems="10"
-            android:id="@+id/editTextTextMultiLine" android:background="@drawable/borderredius"
+            android:id="@+id/etDecsp" android:background="@drawable/borderredius"
             android:minHeight="60dp" tools:ignore="SpeakableTextPresentCheck" android:layout_marginBottom="15dp"
             android:hint="Descripción de inversión"/>
     <Button
             android:text="@string/add"
             android:layout_width="187dp"
-            android:layout_height="66dp" android:id="@+id/button2" android:textAllCaps="false"
+            android:layout_height="66dp" android:id="@+id/btnAddInvest" android:textAllCaps="false"
             android:textSize="18sp" android:textStyle="bold" android:backgroundTint="@color/Green"/>
 </LinearLayout>

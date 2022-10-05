@@ -15,7 +15,7 @@
     <string name="add_Clients">Agregar clientes</string>
     <string name="showClients">Ver clientes</string>
     <string name="addInvest">Agregar inversión</string>
-    <string name="showInvest">Ver inversión</string>
+    <string name="showInvest">Ver inversiones</string>
     <string name="Registry">Registrar</string>
     <string name="id_Card">Número de documento</string>
     <string name="E_mail">Correo electrónico</string>
@@ -46,4 +46,8 @@
     <string name="tInvested">T.Inversión</string>
     <string name="Edit">Editar</string>
     <string name="delete">Delete</string>
+    <string name="investttName">Nombre inversión</string>
+    <string name="Invest_detail">Detalle de inversión</string>
+    <string name="cclient_detail">Detalle cliente</string>
+    <string name="EditName">Editar nombre</string>
 </resources>

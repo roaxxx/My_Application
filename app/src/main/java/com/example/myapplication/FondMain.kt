@@ -14,27 +14,12 @@ class FondMain : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fond_main)
+        getFontDetails()
+
         val addClients = findViewById<Button>(R.id.addClients)
         val showClient = findViewById<Button>(R.id.showClients)
         val addInvest = findViewById<Button>(R.id.addInvest)
         val showInvest = findViewById<Button>(R.id.showInvest)
-        var tFont=findViewById<TextView>(R.id.tFont)
-        var numClients=findViewById<TextView>(R.id.numClients)
-        var numInvest=findViewById<TextView>(R.id.numInvest)
-        //Conexión a MySQL
-        val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.10.14:8081/API_REST_BD_CON/admin/fontDetail.php"
-        val jsRequest = JsonObjectRequest(
-            Request.Method.GET,url,null,
-            { response ->
-                tFont.text=response.getString("tMoney")
-                numClients.setText(response.getString("clients"))
-                numInvest.setText(response.getString("investss"))
-            }, {error->
-                Toast.makeText(this,"$error ahhh", Toast.LENGTH_LONG).show()
-            })
-        queue.add(jsRequest)
-
         addClients.setOnClickListener{
             startActivity(Intent(this,add_Client::class.java))
         }
@@ -47,5 +32,23 @@ class FondMain : AppCompatActivity() {
         showInvest.setOnClickListener {
             startActivity(Intent(this,show_Invest::class.java))
         }
+    }
+    //Obtiene los detalles del encabezado del fondo
+    private fun getFontDetails() {
+        val tFont=findViewById<TextView>(R.id.tFont)
+        val numClients=findViewById<TextView>(R.id.numClients)
+        val numInvest=findViewById<TextView>(R.id.numInvest)
+        val queue = Volley.newRequestQueue(this)
+        val url = "http://192.168.10.16:8081/API_REST_BD_CON/admin/fontDetail.php"
+        val jsRequest = JsonObjectRequest(
+            Request.Method.GET,url,null,
+            { response ->
+                tFont.text=response.getString("tMoney")
+                numClients.text=response.getString("clients")
+                numInvest.text=response.getString("investss")
+            }, {error->
+                Toast.makeText(this,"$error ahhh", Toast.LENGTH_LONG).show()
+            })
+        queue.add(jsRequest)
     }
 }

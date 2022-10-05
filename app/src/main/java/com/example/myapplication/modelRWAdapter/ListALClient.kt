@@ -19,18 +19,16 @@ class ListALClient(client: MutableList<ListClientE>): RecyclerView.Adapter<ListA
     override fun getItemCount(): Int {
         return client.size
     }
-
     override fun onBindViewHolder(holder: ViewHolder, i: Int) {
         holder.name.text = client.get(i).iNamee
-        holder.invested.text = client.get(i).iNamee
+        holder.invested.text = client.get(i).iVal
     }
     // Elementos de la tupla
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var name: TextView
-        var invested: TextView
-        init {
-            name = itemView.findViewById(R.id.ListNameClientB)
-            invested = itemView.findViewById(R.id.investedClient)
+        var name = itemView.findViewById<TextView>(R.id.ListNameClientB)
+        var invested= itemView.findViewById<TextView>(R.id.investedClient)
+        fun renden(){
+
         }
     }
 }

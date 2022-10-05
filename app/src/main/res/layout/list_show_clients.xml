@@ -54,8 +54,8 @@
         <ImageButton
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/ic_baseline_edit_24"
-                android:id="@+id/btnEdit"
+                app:srcCompat="@drawable/eye"
+                android:id="@+id/btnSc"
                 android:layout_weight="1"
                 android:contentDescription="@string/Edit"/>
         <ImageButton

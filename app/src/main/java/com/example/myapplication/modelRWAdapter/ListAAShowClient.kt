@@ -29,14 +29,15 @@ class ListAAShowClient(
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val name=itemView.findViewById<TextView>(R.id.name)
         val invested=itemView.findViewById<TextView>(R.id.value)
+        val btnSc = itemView.findViewById<ImageButton>(R.id.btnSc)
         val btnDelete = itemView.findViewById<ImageButton>(R.id.btnDelete)
         fun render(ListCAE: ListCAE,
                    onClickListener: (ListCAE) -> Unit,
                    onClickDelete: (Int) -> Unit){
             name.text=ListCAE.cName
             invested.text=ListCAE.tInvest
-            itemView.setOnClickListener{
-                onClickDelete(adapterPosition)
+            btnSc.setOnClickListener{
+                onClickListener(ListCAE)
             }
             btnDelete.setOnClickListener{
                 onClickDelete(adapterPosition)

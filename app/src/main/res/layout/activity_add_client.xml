@@ -39,7 +39,6 @@
     <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/idCardC"
             android:hint="Ingrese su usuario"
@@ -47,7 +46,7 @@
             android:backgroundTint="#00D50000"
             android:backgroundTintMode="src_over"
             android:paddingLeft="10dp"
-            android:background="#D9D9D9"/>
+            android:background="#D9D9D9" android:inputType="number"/>
     <TextView
             android:text="@string/E_mail"
             android:layout_width="match_parent"
@@ -152,7 +151,7 @@
     <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:ems="10"
             android:id="@+id/ageClient"
             android:hint="Edad actual"

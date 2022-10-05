@@ -54,10 +54,10 @@
         <ImageButton
                 android:layout_width="42dp"
                 android:layout_height="54dp" app:srcCompat="@drawable/ic_baseline_add_24"
-                android:id="@+id/imageButton3" android:layout_weight="1" android:contentDescription="@string/add"/>
+                android:id="@+id/showID" android:layout_weight="1" android:contentDescription="@string/add"/>
         <ImageButton
                 android:layout_width="39dp"
-                android:layout_height="54dp" app:srcCompat="@drawable/menos" android:id="@+id/imageButton4"
+                android:layout_height="54dp" app:srcCompat="@drawable/menos" android:id="@+id/DeleteI"
                 android:layout_weight="1" android:contentDescription="@string/Withdrawal"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -14,12 +14,12 @@
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
             android:orientation="horizontal"
-            android:padding="10dp" android:backgroundTint="@color/cardBack">
+            android:padding="10dp" android:backgroundTint="@color/cardBack" android:gravity="center">
 
         <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content">
+                android:layout_width="181dp"
+                android:layout_height="match_parent">
             <TextView
                     android:text="@string/name"
                     android:layout_width="match_parent"
@@ -27,19 +27,19 @@
                     android:id="@+id/TextMov"
                     android:textSize="18dp"/>
             <TextView
-                    android:text="William Fernando Roa Vargas"
+                    android:text="El dorado"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/name"
-                    android:textSize="16sp"
+                    android:id="@+id/ListNameClientB"
+                    android:textSize="18sp"
                     android:textColor="#000000"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="102dp"
-                android:layout_height="match_parent" android:paddingStart="10dp" android:paddingEnd="0dp">
+                android:layout_height="match_parent">
             <TextView
-                    android:text="@string/tInvested"
+                    android:text="@string/Invested"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/tClientInvest"
@@ -48,16 +48,8 @@
                     android:text="$2400"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/value"
-                    android:textSize="16sp" android:textColor="#000000"/>
+                    android:id="@+id/investedClient"
+                    android:textSize="18sp" android:textColor="#000000"/>
         </LinearLayout>
-        <ImageButton
-                android:layout_width="40dp"
-                android:layout_height="match_parent" app:srcCompat="@drawable/eye"
-                android:id="@+id/showID" android:layout_weight="1" android:contentDescription="@string/add"/>
-        <ImageButton
-                android:layout_width="40dp"
-                android:layout_height="match_parent" app:srcCompat="@drawable/delete" android:id="@+id/DeleteI"
-                android:layout_weight="1" android:contentDescription="@string/Withdrawal"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
