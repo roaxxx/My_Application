@@ -33,7 +33,7 @@ class ShowClients : AppCompatActivity() {
     //Obtiene el listado completo de clietnes
     private fun getFontClients() {
         val queue = Volley.newRequestQueue(this)
-        val url2 = "http://192.168.10.16:8081/API_REST_BD_CON/admin/clients/ashowclients.php"
+        val url2 = "http://192.168.10.17:8081/API_REST_BD_CON/admin/clients/ashowclients.php"
         val jsRequest2 = JsonObjectRequest(
             Request.Method.GET,url2,null,
             { response ->
@@ -65,7 +65,7 @@ class ShowClients : AppCompatActivity() {
         val numInvest=findViewById<TextView>(R.id.numInvest3)
         //Conexión a MySQL
         val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.10.16:8081/API_REST_BD_CON/admin/fontDetail.php"
+        val url = "http://192.168.10.17:8081/API_REST_BD_CON/admin/fontDetail.php"
         val jsRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
             { response ->
@@ -89,7 +89,7 @@ class ShowClients : AppCompatActivity() {
     }
     //Obtiene como parámetro la posición seleccionada, para modificar cliente.
     private fun onItemSelected(ListCAE:ListCAE){
-        var intent = Intent(this, Detail_Client::class.java)
+        val intent = Intent(this, Detail_Client::class.java)
         intent.putExtra("user", ListCAE.idCard)
         startActivity(intent)
     }
@@ -103,7 +103,7 @@ class ShowClients : AppCompatActivity() {
     //Elimina cliente seleccionado en base de datos
     private fun DeleteClient(position: Int, email: String) {
         val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.10.16:8081/API_REST_BD_CON/admin/clients/deleteclient.php"
+        val url = "http://192.168.10.17:8081/API_REST_BD_CON/admin/clients/deleteclient.php"
         val result = object : StringRequest(
             Request.Method.POST,url,
             Response.Listener<String> { response ->

@@ -3,7 +3,6 @@ package com.example.myapplication.modelRWAdapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.ModelDAO.Investimentss
@@ -30,8 +29,8 @@ class inAdapter (invest: MutableList<Investimentss>)
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val ListNameClientB = itemView.findViewById<TextView>(R.id.ListNameClientB)
-        val investedClient = itemView.findViewById<TextView>(R.id.investedClient)
+        val ListNameClientB = itemView.findViewById<TextView>(R.id.nameInv)
+        val investedClient = itemView.findViewById<TextView>(R.id.valInvest)
         fun render(
             ListInvestE: Investimentss
         ) {

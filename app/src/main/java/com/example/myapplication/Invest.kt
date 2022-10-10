@@ -19,6 +19,8 @@ class Invest : AppCompatActivity() {
     private var clients = mutableListOf<ListClientE>()
     private lateinit var adapter:ListALClient
     private lateinit var idInvest:String
+    private lateinit var nameIv:String
+    private lateinit var valInv:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_invest)
@@ -29,21 +31,24 @@ class Invest : AppCompatActivity() {
         //Conexión a la API
         getInvestimentDetail()
         getCLients()
+        var intent:Intent?
         editIName.setOnClickListener {
-            val intent = Intent(this, Detail_Invest::class.java)
-            intent.putExtra("user", "Por crear")
+            intent = Intent(this, EditIvestName::class.java)
+            intent!!.putExtra("nameI", nameIv)
+            intent!!.putExtra("eMail", idInvest)
             startActivity(intent)
         }
         editMinVal.setOnClickListener {
-            val intent = Intent(this, Detail_Invest::class.java)
-            intent.putExtra("user", "Valor mínimo de inversión")
+            intent = Intent(this, EditInvestMinVal::class.java)
+            intent!!.putExtra("valInv", valInv)
+            intent!!.putExtra("eMail", idInvest)
             startActivity(intent)
         }
     }
     //Consulta el listado de clientes de la inversión
     private fun getCLients() {
         val queue = Volley.newRequestQueue(this)
-        val url2 = "http://192.168.10.16:8081/API_REST_BD_CON/investiment/invesShowClient.php?id=$idInvest"
+        val url2 = "http://192.168.10.17:8081/API_REST_BD_CON/investiment/invesShowClient.php?id=$idInvest"
         val jsRequest2 = JsonObjectRequest(
             Request.Method.GET,url2,null,
             { response ->
@@ -74,10 +79,12 @@ class Invest : AppCompatActivity() {
         val nClients=findViewById<TextView>(R.id.nClients)
         val iDescrip=findViewById<TextView>(R.id.iDescrip)
         val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.10.16:8081/API_REST_BD_CON/investiment/showinvest.php?id=$idInvest"
+        val url = "http://192.168.10.17:8081/API_REST_BD_CON/investiment/showinvest.php?id=$idInvest"
         val jsRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
             { response ->
+                nameIv = response.getString("name_investiment")
+                valInv = response.getString("min_value")
                 nameI.text=response.getString("name_investiment")
                 tInvest.text=response.getString("invested")
                 minValue.text=response.getString("min_value")

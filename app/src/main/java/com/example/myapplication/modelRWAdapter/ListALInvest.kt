@@ -30,8 +30,8 @@ class ListALInvest(invest: MutableList<ListInvestE>,
         holder.render(investt.get(i),onClickListener,onClickDelete)
     }
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val ListNameClientB = itemView.findViewById<TextView>(R.id.ListNameClientB)
-        val investedClient = itemView.findViewById<TextView>(R.id.investedClient)
+        val ListNameClientB = itemView.findViewById<TextView>(R.id.nameInv)
+        val investedClient = itemView.findViewById<TextView>(R.id.valInvest)
         val addMoney = itemView.findViewById<ImageButton>(R.id.showID)
         val withdraw = itemView.findViewById<ImageButton>(R.id.DeleteI)
         fun render(ListInvestE:ListInvestE,

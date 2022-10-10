@@ -32,15 +32,25 @@
                     android:fontFamily="@font/roboto"
                     android:textAlignment="center"
                     android:layout_marginBottom="5dp" android:textStyle="bold"/>
-            <TextView
+            <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/name_client"
-                    android:textAlignment="center"
-                    android:textColor="#000000"
-                    android:textSize="18sp"
-                    android:layout_marginBottom="5dp"
-                    android:fontFamily="@font/roboto"/>
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:layout_width="245dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/name_client"
+                        android:textAlignment="center"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/roboto" android:paddingStart="65dp" android:paddingEnd="0dp"/>
+                <ImageButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" app:srcCompat="@drawable/ic_baseline_edit_24"
+                        android:id="@+id/imageButton" android:layout_weight="1"
+                        android:contentDescription="@string/Edit" tools:ignore="TouchTargetSizeCheck"/>
+            </LinearLayout>
             <TextView
                     android:text="@string/Label_fond_cap_t"
                     android:layout_width="match_parent"
@@ -50,16 +60,27 @@
                     android:textAlignment="center"
                     android:fontFamily="@font/roboto"
                     android:layout_marginBottom="5dp" android:textStyle="bold"/>
-            <TextView
-                    android:text="$2,500"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/cap_fond"
-                    android:textColor="#000000"
-                    android:textAlignment="center"
-                    android:textSize="18sp"
-                    android:fontFamily="@font/roboto"
-                    android:layout_marginBottom="5dp"/>
+            <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="310dp"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:layout_width="235dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/cap_fond"
+                        android:textColor="#000000"
+                        android:textAlignment="center"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/roboto"
+                        android:layout_marginBottom="5dp" android:gravity="center" android:paddingStart="70dp"/>
+                <Button
+                        android:text="Retirar"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp" android:id="@+id/button2" android:layout_weight="1"
+                        android:textAllCaps="false" android:textSize="10sp" android:textColor="@color/client_color"
+                        android:backgroundTint="#00FFFEFE" android:background="#00FFFFFF"
+                        tools:ignore="TouchTargetSizeCheck"/>
+            </LinearLayout>
             <TextView
                     android:text="@string/L_fond_cap_iv"
                     android:layout_width="match_parent"
@@ -70,7 +91,6 @@
                     android:textAlignment="center"
                     android:layout_marginBottom="5dp" android:textStyle="bold"/>
             <TextView
-                    android:text="$1500"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/invertido"
@@ -88,7 +108,6 @@
                     android:textSize="18sp"
                     android:fontFamily="@font/roboto" android:textStyle="bold"/>
             <TextView
-                    android:text="22"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/age_view"
@@ -118,8 +137,8 @@
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
-            android:layout_width="412dp"
-            android:layout_height="79dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -131,7 +150,7 @@
                 android:text="Agregar capital"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/button"
+                android:id="@+id/addMon"
                 android:layout_weight="1"
                 android:backgroundTint="#00FFFFFF"
                 android:background="#00FFFFFF"

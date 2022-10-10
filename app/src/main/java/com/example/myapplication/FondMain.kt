@@ -39,7 +39,7 @@ class FondMain : AppCompatActivity() {
         val numClients=findViewById<TextView>(R.id.numClients)
         val numInvest=findViewById<TextView>(R.id.numInvest)
         val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.10.16:8081/API_REST_BD_CON/admin/fontDetail.php"
+        val url = "http://192.168.10.17:8081/API_REST_BD_CON/admin/fontDetail.php"
         val jsRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
             { response ->

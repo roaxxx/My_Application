@@ -19,7 +19,7 @@
                 android:label="@string/EditName"
                 android:theme="@style/Theme.MyApplication3"
                 android:parentActivityName=".Invest"
-                android:name=".EditNameI"
+                android:name=".EditNameC"
                 android:exported="false"/>
         <activity
                 android:name=".Detail_Client"

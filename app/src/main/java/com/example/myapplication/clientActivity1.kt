@@ -16,47 +16,42 @@ import com.example.myapplication.modelRWAdapter.ListALInvest
 import org.json.JSONException
 
 class clientActivity1 : AppCompatActivity() {
+    //Variables globales
     private var invest = mutableListOf<ListInvestE>()
     private lateinit var adapter:ListALInvest
+    private lateinit var  idCard: String
+    private var tMoney = "0"
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_client1)
         val showH = findViewById<Button>(R.id.view_h)
+        val addMon = findViewById<Button>(R.id.addMon)
         val bundle= intent.extras
-        val idCard =bundle?.getString("user")
-        var nameC= findViewById<TextView>(R.id.name_client)
-        var tCap= findViewById<TextView>(R.id.cap_fond)
-        var invested= findViewById<TextView>(R.id.invertido)
-        var age= findViewById<TextView>(R.id.age_view)
-
-
-        //Conexión a la API
-        val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.10.16:8081/API_REST_BD_CON/client/showclient.php?name=$idCard"
-        val jsRequest = JsonObjectRequest(
-            Request.Method.GET,url,null,
-            { response ->
-                nameC.text=response.getString("name")
-                tCap.setText(response.getString("tMoney"))
-                invested.setText(response.getString("invested_money"))
-                age.text=response.getString("age")
-            }, {error->
-                Toast.makeText(this,"$error",Toast.LENGTH_LONG).show()
-            })
-        queue.add(jsRequest)
+        idCard =bundle?.getString("user").toString()
+        //LLamados a métodos de petición
+        getClientDetail()
+        getClientInvestiments()
         showH.setOnClickListener{
             startActivity(Intent(this,showClientMovs::class.java))
         }
+        addMon.setOnClickListener {
+            val intent = Intent(this, add_FondMoney::class.java)
+            intent.putExtra("tMoney", tMoney)
+            intent.putExtra("eMail", idCard)
+            startActivity(intent)
+        }
+    }
 
-        val url2 = "http://192.168.10.16:8081/API_REST_BD_CON/client/cinvest.php?idCard=$idCard"
+    private fun getClientInvestiments() {
+        val queue = Volley.newRequestQueue(this)
+        val url2 = "http://192.168.10.17:8081/API_REST_BD_CON/client/cinvest.php?idCard=$idCard"
         val jsRequest2 = JsonObjectRequest(
             Request.Method.GET,url2,null,
             { response ->
                 try{
-                    var jsonArray=response.getJSONArray("data")
+                    val jsonArray=response.getJSONArray("data")
                     for(i in 0 until jsonArray.length()){
-                        var jsonObject=jsonArray.getJSONObject(i)
+                        val jsonObject=jsonArray.getJSONObject(i)
                         invest.add(
                             ListInvestE(jsonObject.getString("id_investiment"),
                                 jsonObject.getString("name_investiment"),
@@ -70,12 +65,34 @@ class clientActivity1 : AppCompatActivity() {
                     Toast.makeText(this,"aa$e", Toast.LENGTH_LONG).show()
                 }
             }, {error->
-                Toast.makeText(this,"i$error", Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"No ha invertido", Toast.LENGTH_LONG).show()
             })
         queue.add(jsRequest2)
     }
+
+    private fun getClientDetail() {
+        val nameC= findViewById<TextView>(R.id.name_client)
+        val tCap= findViewById<TextView>(R.id.cap_fond)
+        val invested= findViewById<TextView>(R.id.invertido)
+        val age= findViewById<TextView>(R.id.age_view)
+        val queue = Volley.newRequestQueue(this)
+        val url = "http://192.168.10.17:8081/API_REST_BD_CON/client/showclient.php?name=$idCard"
+        val jsRequest = JsonObjectRequest(
+            Request.Method.GET,url,null,
+            { response ->
+                nameC.text=response.getString("name")
+                tCap.text=response.getString("tMoney")
+                tMoney = response.getString("tMoney")
+                invested.text=response.getString("invested_money")
+                age.text=response.getString("age")
+            }, {error->
+                Toast.makeText(this,"$error",Toast.LENGTH_LONG).show()
+            })
+        queue.add(jsRequest)
+    }
+
     //Inicializa el recyclerView con mutableList
-    fun initRecyclerView(invest: MutableList<ListInvestE>) {
+    private fun initRecyclerView(invest: MutableList<ListInvestE>) {
         val recyclerView = findViewById<RecyclerView>(R.id.listRecyclerView)
         adapter = ListALInvest(
             this.invest,
@@ -86,11 +103,11 @@ class clientActivity1 : AppCompatActivity() {
         recyclerView.adapter = adapter
     }
     //Devuelve una posición especifica en la cual se encuentra una inversión:Para invertir
-    fun addMoney(i:Int){
+    private fun addMoney(i:Int){
         Toast.makeText(this,"$i",Toast.LENGTH_SHORT).show()
     }
     //Devuelve una posición especifica en la cual se encuentra una inversión:Para retirar
-    fun withdrawMoney(i:Int){
+    private fun withdrawMoney(i:Int){
         Toast.makeText(this,"$i",Toast.LENGTH_SHORT).show()
     }
 }

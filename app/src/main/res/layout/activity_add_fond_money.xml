@@ -7,11 +7,11 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:paddingHorizontal="60dp"
+        android:paddingHorizontal="20dp"
         tools:context=".add_investMoney">
 
     <TextView
-            android:text="@string/totalVal"
+            android:text="@string/Label_fond_cap_t"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView36"
@@ -24,7 +24,7 @@
             android:text="$137,000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView37"
+            android:id="@+id/twtMoney"
             android:gravity="center"
             android:layout_marginBottom="20dp"
             android:textSize="34sp"
@@ -32,20 +32,23 @@
             android:fontFamily="@font/roboto"
             android:textStyle="bold"/>
     <EditText
-            android:layout_width="match_parent"
+            android:layout_width="271dp"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:hint="Digite el valor a depositar"
             android:ems="10"
             android:background="@drawable/borderredius"
-            android:layout_marginBottom="10dp"
-            android:id="@+id/editTextTextPersonName6" android:fontFamily="@font/roboto" android:minHeight="48dp"/>
+            android:layout_marginBottom="20dp"
+            android:id="@+id/edtValTM" android:fontFamily="@font/roboto" android:minHeight="48dp"/>
     <Button
-            android:layout_width="200dp"
+            android:layout_width="156dp"
             android:layout_height="60dp"
             android:text="Agregar"
             android:backgroundTint="@color/Green"
             android:textAllCaps="false"
-            android:id="@+id/button4" android:fontFamily="@font/roboto" android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:id="@+id/btnAddMI" android:fontFamily="@font/roboto" android:textSize="18sp"
+            android:textStyle="bold" android:layout_marginBottom="20dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="317dp" android:id="@+id/listInvest"/>
 </LinearLayout>

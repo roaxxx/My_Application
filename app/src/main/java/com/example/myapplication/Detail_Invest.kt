@@ -29,7 +29,7 @@ class Detail_Invest : AppCompatActivity() {
         val iDnCs=findViewById<TextView>(R.id.iDnCs)
         val iDDescp=findViewById<TextView>(R.id.iDDescp)
         val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.10.16:8081/API_REST_BD_CON/investiment/showinvest.php?id=$idInvest"
+        val url = "http://192.168.10.17:8081/API_REST_BD_CON/investiment/showinvest.php?id=$idInvest"
         val jsRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
             { response ->
@@ -42,7 +42,7 @@ class Detail_Invest : AppCompatActivity() {
                 Toast.makeText(this,"$error ahhh", Toast.LENGTH_LONG).show()
             })
         queue.add(jsRequest)
-        val url2 = "http://192.168.10.16:8081/API_REST_BD_CON/investiment/invesShowClient.php?id=$idInvest"
+        val url2 = "http://192.168.10.17:8081/API_REST_BD_CON/investiment/invesShowClient.php?id=$idInvest"
         val jsRequest2 = JsonObjectRequest(
             Request.Method.GET,url2,null,
             { response ->

@@ -28,7 +28,7 @@ class add_invest : AppCompatActivity() {
         val etminVal=findViewById<EditText>(R.id.etminVal)
         val etDecsp=findViewById<EditText>(R.id.etDecsp)
         val queue = Volley.newRequestQueue(this)
-        val url ="http://192.168.10.16:8081/API_REST_BD_CON/admin/investiments/createinvestiment.php"
+        val url ="http://192.168.10.17:8081/API_REST_BD_CON/admin/investiments/createinvestiment.php"
         val result = object : StringRequest(
             Request.Method.POST,url,
             Response.Listener<String> { response ->

@@ -25,8 +25,8 @@ class ListALClient(client: MutableList<ListClientE>): RecyclerView.Adapter<ListA
     }
     // Elementos de la tupla
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var name = itemView.findViewById<TextView>(R.id.ListNameClientB)
-        var invested= itemView.findViewById<TextView>(R.id.investedClient)
+        var name = itemView.findViewById<TextView>(R.id.nameInv)
+        var invested= itemView.findViewById<TextView>(R.id.valInvest)
         fun renden(){
 
         }

@@ -34,7 +34,7 @@ class show_Invest : AppCompatActivity() {
     //Consulta inversiones totales
     private fun getInvestiments() {
         val queue = Volley.newRequestQueue(this)
-        val url2 = "http://192.168.10.16:8081/API_REST_BD_CON/admin/investiments/ashowinvest.php"
+        val url2 = "http://192.168.10.17:8081/API_REST_BD_CON/admin/investiments/ashowinvest.php"
         val jsRequest2 = JsonObjectRequest(
             Request.Method.GET,url2,null,
             { response ->
@@ -62,7 +62,7 @@ class show_Invest : AppCompatActivity() {
         var numClients=findViewById<TextView>(R.id.numClients3)
         var numInvest=findViewById<TextView>(R.id.numInvest3)
         val queue = Volley.newRequestQueue(this)
-        val url = "http:///192.168.10.16:8081/API_REST_BD_CON/admin/fontDetail.php"
+        val url = "http:///192.168.10.17:8081/API_REST_BD_CON/admin/fontDetail.php"
         val jsRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
             { response ->
@@ -100,7 +100,7 @@ class show_Invest : AppCompatActivity() {
     //Borrar inversión
     private fun deleteInvest(position: Int, email: String) {
         val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.10.16:8081/API_REST_BD_CON/admin/investiments/deleteivestiment.php"
+        val url = "http://192.168.10.17:8081/API_REST_BD_CON/admin/investiments/deleteivestiment.php"
         val result = object : StringRequest(
             Request.Method.POST,url,
             Response.Listener<String> { response ->

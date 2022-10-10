@@ -50,4 +50,6 @@
     <string name="Invest_detail">Detalle de inversión</string>
     <string name="cclient_detail">Detalle cliente</string>
     <string name="EditName">Editar nombre</string>
+    <string name="invertir">Invertir</string>
+    <string name="nInvestVal">Valor a invertir</string>
 </resources>

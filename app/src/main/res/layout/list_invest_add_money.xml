@@ -14,11 +14,11 @@
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
             android:orientation="horizontal"
-            android:padding="10dp" android:backgroundTint="@color/cardBack" android:gravity="center">
+            android:padding="10dp" android:backgroundTint="@color/cardBack">
 
         <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="181dp"
+                android:layout_width="116dp"
                 android:layout_height="match_parent">
             <TextView
                     android:text="@string/name"
@@ -36,10 +36,10 @@
         </LinearLayout>
         <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="102dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent">
             <TextView
-                    android:text="@string/Invested"
+                    android:text="@string/tInvested"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/tClientInvest"
@@ -51,5 +51,13 @@
                     android:id="@+id/valInvest"
                     android:textSize="18sp" android:textColor="#000000"/>
         </LinearLayout>
+        <Button
+                android:text="@string/invertir"
+                android:textAllCaps="false"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/btnInvest"
+                android:layout_weight="1" android:backgroundTint="#00FFFFFF" android:background="#00FFFFFF"
+                android:textColor="#000000"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

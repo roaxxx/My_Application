@@ -36,7 +36,7 @@ class Detail_Client : AppCompatActivity() {
         var invested= findViewById<TextView>(R.id.invertido)
         var age= findViewById<TextView>(R.id.age_view)
         val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.10.16:8081/API_REST_BD_CON/client/showclient.php?name=$idCard"
+        val url = "http://192.168.10.17:8081/API_REST_BD_CON/client/showclient.php?name=$idCard"
         val jsRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
             { response ->
@@ -51,7 +51,7 @@ class Detail_Client : AppCompatActivity() {
     }
     private fun getClientInvestiments() {
         val queue = Volley.newRequestQueue(this)
-        val url2 = "http://192.168.10.16:8081/API_REST_BD_CON/client/cinvest.php?idCard=$idCard"
+        val url2 = "http://192.168.10.17:8081/API_REST_BD_CON/client/cinvest.php?idCard=$idCard"
         val jsRequest2 = JsonObjectRequest(
             Request.Method.GET,url2,null,
             { response ->
