@@ -8,7 +8,7 @@
         android:orientation="vertical"
         android:gravity="center"
         android:paddingHorizontal="20dp"
-        tools:context=".add_investMoney">
+        tools:context=".add_investMoney" android:paddingVertical="30dp">
 
     <TextView
             android:text="@string/Label_fond_cap_t"
@@ -50,5 +50,5 @@
             android:textStyle="bold" android:layout_marginBottom="20dp"/>
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="317dp" android:id="@+id/listInvest"/>
+            android:layout_height="match_parent" android:id="@+id/listInvest"/>
 </LinearLayout>

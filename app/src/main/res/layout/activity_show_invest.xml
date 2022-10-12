@@ -10,11 +10,11 @@
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="0dp"
-            android:layout_height="670dp" android:id="@+id/linearLayout2"
+            android:layout_height="0dp" android:id="@+id/linearLayout2"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="1.0" android:gravity="center" android:paddingHorizontal="10dp"
-            android:paddingVertical="40dp">
+            app:layout_constraintHorizontal_bias="1.0" android:gravity="center" android:paddingHorizontal="20dp"
+            android:paddingVertical="40dp" app:layout_constraintBottom_toTopOf="@+id/siAddInvest">
         <TextView
                 android:text="@string/Label_fond_cap_t"
                 android:layout_width="match_parent"

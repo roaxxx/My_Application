@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/invest"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:animateLayoutChanges="true"
+              app:cardCornerRadius="5dp"
+              app:cardElevation="3dp"
+              android:orientation="vertical"
+              app:cardUseCompatPadding="true" app:cardBackgroundColor="#D9D9D9"
+              android:background="@drawable/borderredius" android:backgroundTint="@color/white">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:orientation="vertical"
+            android:padding="10dp" android:backgroundTint="@color/white">
+        <TextView
+                android:text="@string/serConfig"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView22" android:layout_weight="1"
+                android:gravity="center" android:textSize="24sp" android:fontFamily="@font/roboto"
+                android:textColor="#000000" android:layout_marginBottom="20dp"/>
+        <TextView
+                android:text="@string/ipAddres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/textView24" android:layout_weight="1"
+                android:textColor="#000000" android:textSize="16sp" android:fontFamily="@font/roboto"
+                android:gravity="start" android:layout_marginStart="10dp" android:layout_marginBottom="20dp"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number|text"
+                android:ems="10"
+                android:id="@+id/ipAddress" android:layout_weight="1"
+                android:hint="Digite la dirección IP del servidor" android:background="@drawable/borderredius"
+                android:minHeight="48dp" android:layout_marginBottom="20dp"/>
+        <Button
+                android:text="@string/save"
+                android:layout_width="match_parent"
+                android:layout_height="62dp" android:id="@+id/btnIPad" android:layout_weight="1"
+                android:backgroundTint="@color/Green" android:textAllCaps="false" android:textSize="16sp"
+                android:textStyle="bold"/>
+    </LinearLayout>
+</LinearLayout>

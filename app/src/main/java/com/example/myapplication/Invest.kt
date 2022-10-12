@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -21,9 +22,11 @@ class Invest : AppCompatActivity() {
     private lateinit var idInvest:String
     private lateinit var nameIv:String
     private lateinit var valInv:String
+    private lateinit var ipV4:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_invest)
+        getPreference()
         val bundle= intent.extras
         idInvest = bundle?.getString("user").toString()
         val editIName=findViewById<ImageButton>(R.id.editIName)
@@ -45,10 +48,14 @@ class Invest : AppCompatActivity() {
             startActivity(intent)
         }
     }
+    private fun getPreference() {
+        val pref = getSharedPreferences("config", Context.MODE_PRIVATE)
+        ipV4 = pref.getString("ip","0").toString()
+    }
     //Consulta el listado de clientes de la inversión
     private fun getCLients() {
         val queue = Volley.newRequestQueue(this)
-        val url2 = "http://192.168.10.17:8081/API_REST_BD_CON/investiment/invesShowClient.php?id=$idInvest"
+        val url2 = "http://$ipV4:8081/API_REST_BD_CON/investiment/invesShowClient.php?id=$idInvest"
         val jsRequest2 = JsonObjectRequest(
             Request.Method.GET,url2,null,
             { response ->
@@ -79,7 +86,7 @@ class Invest : AppCompatActivity() {
         val nClients=findViewById<TextView>(R.id.nClients)
         val iDescrip=findViewById<TextView>(R.id.iDescrip)
         val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.10.17:8081/API_REST_BD_CON/investiment/showinvest.php?id=$idInvest"
+        val url = "http://$ipV4:8081/API_REST_BD_CON/investiment/showinvest.php?id=$idInvest"
         val jsRequest = JsonObjectRequest(
             Request.Method.GET,url,null,
             { response ->

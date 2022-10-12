@@ -52,4 +52,7 @@
     <string name="EditName">Editar nombre</string>
     <string name="invertir">Invertir</string>
     <string name="nInvestVal">Valor a invertir</string>
+    <string name="save">Guardar</string>
+    <string name="ipAddres">Dirección IP del servidor</string>
+    <string name="serConfig">Configuración de servidor</string>
 </resources>

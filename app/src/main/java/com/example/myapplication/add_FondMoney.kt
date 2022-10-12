@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -23,10 +24,12 @@ class add_FondMoney : AppCompatActivity() {
     private var sInvest = mutableListOf<ListIAnvestE>()
     private var tMoney = "0"
     private lateinit var eMail:String
+    private lateinit var ipV4:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_fond_money)
+        getPreference()
         val bundle= intent.extras
         eMail = bundle?.getString("eMail").toString()
         tMoney  = bundle?.getString("tMoney").toString()
@@ -40,10 +43,14 @@ class add_FondMoney : AppCompatActivity() {
             addFontMoney(tMoney.toInt()+nMoney.toInt())
         }
     }
+    private fun getPreference() {
+        val pref = getSharedPreferences("config", Context.MODE_PRIVATE)
+        ipV4 = pref.getString("ip","0").toString()
+    }
     //Consulta las inversiones disponibles
     private fun getInvestiments() {
         val queue = Volley.newRequestQueue(this)
-        val url2 = "http://192.168.10.17:8081/API_REST_BD_CON/admin/investiments/ashowinvest.php"
+        val url2 = "http://$ipV4:8081/API_REST_BD_CON/admin/investiments/ashowinvest.php"
         val jsRequest2 = JsonObjectRequest(
             Request.Method.GET,url2,null,
             { response ->
@@ -88,7 +95,7 @@ class add_FondMoney : AppCompatActivity() {
     //Consignar dinero a la cuenta cliente
     private fun addFontMoney(i: Int) {
         val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.10.17:8081/API_REST_BD_CON/client/addFontMoney.php"
+        val url = "http://$ipV4:8081/API_REST_BD_CON/client/addFontMoney.php"
         val result = object : StringRequest(
             Method.POST, url,
             Response.Listener<String> { response ->
@@ -106,8 +113,10 @@ class add_FondMoney : AppCompatActivity() {
         }
         queue.add(result)
     }
-
     private fun refreshActity() {
-
+        val intent = Intent(this, add_FondMoney::class.java)
+        intent.putExtra("tMoney", tMoney)
+        intent.putExtra("eMail", eMail)
+        startActivity(intent)
     }
 }

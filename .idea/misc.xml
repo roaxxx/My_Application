@@ -5,25 +5,27 @@
       <map>
         <entry key="..\:/Android_Projects/app/src/main/res/drawable/borderredius.xml" value="0.2315" />
         <entry key="..\:/Android_Projects/app/src/main/res/drawable/ic_launcher_background.xml" value="0.192" />
-        <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_add_client.xml" value="0.25" />
-        <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_add_fond_money.xml" value="0.18" />
-        <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_add_invest.xml" value="0.33" />
+        <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_add_client.xml" value="0.4" />
+        <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_add_fond_money.xml" value="0.2" />
+        <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_add_invest.xml" value="0.264" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_add_invest_money.xml" value="0.2" />
-        <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_client1.xml" value="0.16" />
+        <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_client1.xml" value="0.2" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_detail_client.xml" value="0.33" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_detail_invest.xml" value="0.2" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_edit_ivest_name.xml" value="0.18" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_edit_name_i.xml" value="0.225" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_fond_main.xml" value="0.21" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_fond_with_dr.xml" value="0.25" />
-        <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_invest.xml" value="0.25" />
-        <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_invest.xml" value="0.176" />
+        <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_show_client_movs.xml" value="0.25" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_show_clients.xml" value="0.22" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_show_invest.xml" value="0.2" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/clientlistrecyclerview.xml" value="0.25" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/edit_invest_min_val.xml" value="0.25" />
+        <entry key="..\:/Android_Projects/app/src/main/res/layout/get_ip.xml" value="0.264" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/investlistadmin.xml" value="0.3875" />
+        <entry key="..\:/Android_Projects/app/src/main/res/layout/ivestment_withdrawal.xml" value="0.225" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/list_invest_add_money.xml" value="0.33" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/list_show_clients.xml" value="0.33" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/listivest.xml" value="0.33" />

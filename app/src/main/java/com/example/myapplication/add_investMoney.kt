@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,10 +16,12 @@ class add_investMoney : AppCompatActivity() {
     private lateinit var eMailC:String
     private lateinit var tMoney:String
     private lateinit var nameI:String
+    private lateinit var ipV4:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_invest_money)
         val bundle= intent.extras
+        getPreference()
         eMailI = bundle?.getString("eMail").toString()
         eMailC = bundle?.getString("eMailc").toString()
         tMoney = bundle?.getString("tMoney").toString()
@@ -30,11 +33,15 @@ class add_investMoney : AppCompatActivity() {
         twtMoney.text = tMoney
         btnAddMI.setOnClickListener {invest()}
     }
+    private fun getPreference() {
+        val pref = getSharedPreferences("config", Context.MODE_PRIVATE)
+        ipV4 = pref.getString("ip","0").toString()
+    }
     //Invierte en la inversión seleccionada
     private fun invest() {
         Toast.makeText(this, " C $eMailC  I $eMailI", Toast.LENGTH_LONG).show()
         val queue = Volley.newRequestQueue(this)
-        val url = "http://192.168.10.17:8081/API_REST_BD_CON/client/invest.php"
+        val url = "http://$ipV4:8081/API_REST_BD_CON/client/invest.php"
         val result = object : StringRequest(
             Method.POST, url,
             Response.Listener<String> { response ->
@@ -42,7 +49,6 @@ class add_investMoney : AppCompatActivity() {
                 initIntent()
             }, Response.ErrorListener { error ->
                 Toast.makeText(this, "Error en la conexión", Toast.LENGTH_LONG).show()
-                print("------------------>>>>>>>>>___>>>>>>>>>>>>__>-->$error")
             }) {
             override fun getParams(): MutableMap<String, String>? {
                 val paramss = HashMap<String, String>()
