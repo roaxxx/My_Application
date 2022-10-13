@@ -16,7 +16,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintHorizontal_bias="0.0" android:gravity="center" android:paddingHorizontal="10dp"
             app:layout_constraintBottom_toTopOf="@+id/siAddInvest" app:layout_constraintVertical_bias="0.027"
-            android:background="@color/white">
+            android:background="@color/white" android:paddingVertical="20dp">
         <TextView
                 android:text="@string/Label_fond_cap_t"
                 android:layout_width="match_parent"

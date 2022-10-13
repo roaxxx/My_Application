@@ -35,7 +35,8 @@
                 android:ems="10"
                 android:id="@+id/ipAddress" android:layout_weight="1"
                 android:hint="Digite la dirección IP del servidor" android:background="@drawable/borderredius"
-                android:minHeight="48dp" android:layout_marginBottom="20dp" android:textColorHint="@color/Hint"/>
+                android:minHeight="48dp" android:layout_marginBottom="20dp" android:textColorHint="@color/Hint"
+                android:textColor="@color/black"/>
         <Button
                 android:text="@string/save"
                 android:layout_width="match_parent"

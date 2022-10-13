@@ -19,7 +19,7 @@
             android:layout_marginBottom="10dp"
             android:textSize="24sp"
             android:fontFamily="@font/roboto"
-            android:textStyle="bold"/>
+            android:textStyle="bold" android:textColor="@color/greyText"/>
     <TextView
             android:text="El dorado"
             android:layout_width="match_parent"
@@ -41,7 +41,7 @@
             android:layout_marginBottom="20dp"
             android:id="@+id/edtValTM"
             android:fontFamily="@font/roboto"
-            android:minHeight="48dp" android:textColorHint="@color/Hint"/>
+            android:minHeight="48dp" android:textColorHint="@color/Hint" android:textColor="@color/black"/>
     <Button
             android:layout_width="200dp"
             android:layout_height="71dp"
