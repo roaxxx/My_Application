@@ -35,12 +35,12 @@
                 android:ems="10"
                 android:id="@+id/ipAddress" android:layout_weight="1"
                 android:hint="Digite la dirección IP del servidor" android:background="@drawable/borderredius"
-                android:minHeight="48dp" android:layout_marginBottom="20dp"/>
+                android:minHeight="48dp" android:layout_marginBottom="20dp" android:textColorHint="@color/Hint"/>
         <Button
                 android:text="@string/save"
                 android:layout_width="match_parent"
                 android:layout_height="62dp" android:id="@+id/btnIPad" android:layout_weight="1"
                 android:backgroundTint="@color/Green" android:textAllCaps="false" android:textSize="16sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" android:textColor="@color/black"/>
     </LinearLayout>
 </LinearLayout>

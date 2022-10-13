@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".clientActivity1"
-        android:backgroundTint="#FFFFFF">
+        android:backgroundTint="#FFFFFF" android:onClick="withdraFromFund">
 
     <LinearLayout
             android:orientation="vertical"
@@ -16,7 +16,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-            app:layout_constraintVertical_bias="0.422" android:paddingHorizontal="20dp" android:paddingVertical="20dp">
+            app:layout_constraintVertical_bias="0.422" android:paddingHorizontal="20dp" android:paddingVertical="20dp"
+            android:background="@color/white">
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -31,7 +32,7 @@
                     android:textSize="18sp"
                     android:fontFamily="@font/roboto"
                     android:textAlignment="center"
-                    android:layout_marginBottom="5dp" android:textStyle="bold"/>
+                    android:layout_marginBottom="5dp" android:textStyle="bold" android:textColor="@color/greyText"/>
             <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
@@ -49,7 +50,8 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent" app:srcCompat="@drawable/ic_baseline_edit_24"
                         android:id="@+id/imageButton" android:layout_weight="1"
-                        android:contentDescription="@string/Edit" tools:ignore="TouchTargetSizeCheck"/>
+                        android:contentDescription="@string/Edit" tools:ignore="TouchTargetSizeCheck"
+                        android:backgroundTint="#00FFFFFF"/>
             </LinearLayout>
             <TextView
                     android:text="@string/Label_fond_cap_t"
@@ -59,7 +61,7 @@
                     android:textSize="18sp"
                     android:textAlignment="center"
                     android:fontFamily="@font/roboto"
-                    android:layout_marginBottom="5dp" android:textStyle="bold"/>
+                    android:layout_marginBottom="5dp" android:textStyle="bold" android:textColor="@color/greyText"/>
             <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="310dp"
@@ -76,10 +78,10 @@
                 <Button
                         android:text="Retirar"
                         android:layout_width="0dp"
-                        android:layout_height="30dp" android:id="@+id/button2" android:layout_weight="1"
+                        android:layout_height="30dp" android:id="@+id/btnWFont" android:layout_weight="1"
                         android:textAllCaps="false" android:textSize="10sp" android:textColor="@color/client_color"
                         android:backgroundTint="#00FFFEFE" android:background="#00FFFFFF"
-                        tools:ignore="TouchTargetSizeCheck"/>
+                        tools:ignore="TouchTargetSizeCheck" android:onClick="withdraFromFund"/>
             </LinearLayout>
             <TextView
                     android:text="@string/L_fond_cap_iv"
@@ -89,7 +91,7 @@
                     android:textSize="18sp"
                     android:fontFamily="@font/roboto"
                     android:textAlignment="center"
-                    android:layout_marginBottom="5dp" android:textStyle="bold"/>
+                    android:layout_marginBottom="5dp" android:textStyle="bold" android:textColor="@color/greyText"/>
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -106,7 +108,7 @@
                     android:id="@+id/textView10"
                     android:textAlignment="center"
                     android:textSize="18sp"
-                    android:fontFamily="@font/roboto" android:textStyle="bold"/>
+                    android:fontFamily="@font/roboto" android:textStyle="bold" android:textColor="@color/greyText"/>
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -156,7 +158,7 @@
                 android:background="#00FFFFFF"
                 android:textColor="#000000"
                 android:drawableTop="@drawable/ic_baseline_add_24"
-                android:textAllCaps="false"/>
+                android:textAllCaps="false" android:onClick="addMoney"/>
         <Button
                 android:text="Ver movimientos"
                 android:layout_width="wrap_content"
@@ -167,6 +169,6 @@
                 android:background="#00FFFFFF"
                 android:textColor="#000000"
                 android:drawableTop="@drawable/eye"
-                android:textAllCaps="false"/>
+                android:textAllCaps="false" android:onClick="showClientMovs"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

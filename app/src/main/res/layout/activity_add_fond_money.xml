@@ -8,7 +8,7 @@
         android:orientation="vertical"
         android:gravity="center"
         android:paddingHorizontal="20dp"
-        tools:context=".add_investMoney" android:paddingVertical="30dp">
+        tools:context=".add_investMoney" android:paddingVertical="30dp" android:background="@color/white">
 
     <TextView
             android:text="@string/Label_fond_cap_t"
@@ -19,9 +19,8 @@
             android:layout_marginBottom="10dp"
             android:textSize="24sp"
             android:fontFamily="@font/roboto"
-            android:textStyle="bold"/>
+            android:textStyle="bold" android:textColor="@color/greyText"/>
     <TextView
-            android:text="$137,000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/twtMoney"
@@ -39,7 +38,8 @@
             android:ems="10"
             android:background="@drawable/borderredius"
             android:layout_marginBottom="20dp"
-            android:id="@+id/edtValTM" android:fontFamily="@font/roboto" android:minHeight="48dp"/>
+            android:id="@+id/edtValTM" android:fontFamily="@font/roboto" android:minHeight="48dp"
+            android:textColorHint="@color/Hint"/>
     <Button
             android:layout_width="156dp"
             android:layout_height="60dp"
@@ -47,7 +47,7 @@
             android:backgroundTint="@color/Green"
             android:textAllCaps="false"
             android:id="@+id/btnAddMI" android:fontFamily="@font/roboto" android:textSize="18sp"
-            android:textStyle="bold" android:layout_marginBottom="20dp"/>
+            android:textStyle="bold" android:layout_marginBottom="20dp" android:textColor="@color/white"/>
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent" android:id="@+id/listInvest"/>

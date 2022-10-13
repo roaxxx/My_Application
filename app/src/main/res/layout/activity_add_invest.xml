@@ -6,7 +6,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".add_invest" android:gravity="center" android:paddingHorizontal="60dp">
+        tools:context=".add_invest" android:gravity="center" android:paddingHorizontal="60dp"
+        android:background="@color/white">
 
     <TextView
             android:text="@string/Registry"
@@ -26,7 +27,8 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/e_mailI"
-            android:background="@drawable/borderredius" android:minHeight="48dp" android:hint="E-mail asociado"/>
+            android:background="@drawable/borderredius" android:minHeight="48dp" android:hint="E-mail asociado"
+            android:textColorHint="@color/Hint"/>
     <TextView
             android:text="@string/investttName"
             android:layout_width="match_parent"
@@ -39,7 +41,7 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/etNInvest" android:background="@drawable/borderredius"
-            android:minHeight="48dp" android:hint="Nombre de la invesión"/>
+            android:minHeight="48dp" android:hint="Nombre de la invesión" android:textColorHint="@color/Hint"/>
     <TextView
             android:text="@string/Label_pasw"
             android:layout_width="match_parent"
@@ -52,7 +54,7 @@
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/etPasswI" android:background="@drawable/borderredius"
-            android:hint="Digite una nueva contraseña" android:minHeight="48dp"/>
+            android:hint="Digite una nueva contraseña" android:minHeight="48dp" android:textColorHint="@color/Hint"/>
     <TextView
             android:text="@string/min_invest"
             android:layout_width="match_parent"
@@ -65,7 +67,7 @@
             android:inputType="number"
             android:ems="10"
             android:id="@+id/etminVal" android:background="@drawable/borderredius" android:minHeight="48dp"
-            android:hint="Min inversión"/>
+            android:hint="Min inversión" android:textColorHint="@color/Hint"/>
     <TextView
             android:text="@string/descInvest"
             android:layout_width="match_parent"
@@ -80,7 +82,7 @@
             android:ems="10"
             android:id="@+id/etDecsp" android:background="@drawable/borderredius"
             android:minHeight="60dp" tools:ignore="SpeakableTextPresentCheck" android:layout_marginBottom="15dp"
-            android:hint="Descripción de inversión"/>
+            android:hint="Descripción de inversión" android:textColorHint="@color/Hint"/>
     <Button
             android:text="@string/add"
             android:layout_width="187dp"

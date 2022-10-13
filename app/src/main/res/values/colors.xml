@@ -11,4 +11,6 @@
     <color name="cardBack">#DFDFDF</color>
     <color name="client_color">#A50045</color>
     <color name="zian">#16AFB9</color>
+    <color name="greyText">#757575</color>
+    <color name="Hint">#999898</color>
 </resources>

@@ -27,7 +27,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/TextMov"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" android:textColor="@color/greyText"/>
             <TextView
                     android:text="William Fernando Roa Vargas"
                     android:layout_width="match_parent"
@@ -45,7 +45,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/tClientInvest"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp" android:textColor="@color/greyText"/>
             <TextView
                     android:text="$2400"
                     android:layout_width="match_parent"

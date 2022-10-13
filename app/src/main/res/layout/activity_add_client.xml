@@ -31,7 +31,7 @@
             android:fontFamily="@font/roboto"
             android:gravity="start"
             android:paddingStart="10dp"
-            android:textColor="#000000"
+            android:textColor="@color/black"
             android:paddingEnd="0dp"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="3dp"
@@ -46,7 +46,8 @@
             android:backgroundTint="#00D50000"
             android:backgroundTintMode="src_over"
             android:paddingLeft="10dp"
-            android:background="#D9D9D9" android:inputType="number"/>
+            android:background="#D9D9D9" android:inputType="number" android:textColorHint="@color/Hint"
+            tools:ignore="TextContrastCheck"/>
     <TextView
             android:text="@string/E_mail"
             android:layout_width="match_parent"
@@ -75,7 +76,7 @@
             android:background="#D9D9D9"
             android:paddingLeft="10dp"
             android:hint="Dirección de correo"
-            android:autofillHints=""/>
+            android:autofillHints="" android:textColorHint="@color/Hint" tools:ignore="TextContrastCheck"/>
     <TextView
             android:text="@string/user_name"
             android:layout_width="match_parent"
@@ -104,7 +105,7 @@
             android:hint="Nombre completo"
             android:background="#D9D9D9"
             android:backgroundTintMode="src_over"
-            android:autofillHints=""/>
+            android:autofillHints="" android:textColorHint="@color/Hint" tools:ignore="TextContrastCheck"/>
     <TextView
             android:text="@string/Label_pasw"
             android:layout_width="match_parent"
@@ -133,7 +134,7 @@
             android:backgroundTintMode="src_over"
             android:minHeight="48dp"
             android:hint="Contraseña nueva"
-            android:autofillHints=""/>
+            android:autofillHints="" android:textColorHint="@color/Hint" tools:ignore="TextContrastCheck"/>
     <TextView
             android:text="@string/c_age"
             android:layout_width="match_parent"
@@ -160,7 +161,7 @@
             android:backgroundTintMode="src_over"
             android:paddingLeft="10dp"
             android:background="#D9D9D9"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginBottom="15dp" android:textColorHint="@color/Hint" tools:ignore="TextContrastCheck"/>
     <Button
             android:text="@string/add"
             android:layout_width="176dp"
@@ -171,5 +172,5 @@
             android:textAllCaps="false"
             android:backgroundTint="@color/Green"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" android:textColor="@color/white"/>
 </LinearLayout>

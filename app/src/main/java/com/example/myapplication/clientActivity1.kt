@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -28,21 +29,25 @@ class clientActivity1 : AppCompatActivity() {
         setContentView(R.layout.activity_client1)
         getPreference()
         val showH = findViewById<Button>(R.id.view_h)
-        val addMon = findViewById<Button>(R.id.addMon)
         val bundle= intent.extras
         idCard =bundle?.getString("user").toString()
         //LLamados a métodos de petición
         getClientDetail()
         getClientInvestiments()
-        showH.setOnClickListener{
-            startActivity(Intent(this,showClientMovs::class.java))
-        }
-        addMon.setOnClickListener {
-            val intent = Intent(this, add_FondMoney::class.java)
-            intent.putExtra("tMoney", tMoney)
-            intent.putExtra("eMail", idCard)
-            startActivity(intent)
-        }
+    }
+    fun showClientMovs(view: View){
+        startActivity(Intent(this,showClientMovs::class.java))
+    }
+    fun addMoney(view: View){
+        val intent = Intent(this, add_FondMoney::class.java)
+        intent.putExtra("tMoney", tMoney)
+        intent.putExtra("eMail", idCard)
+        startActivity(intent)
+    }
+    fun withdraFromFund(view: View){
+        val intent = Intent(this, FondWithDr::class.java)
+        intent.putExtra("tMoney", tMoney)
+        startActivity(intent)
     }
 
     private fun getPreference() {

@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="30dp"
-        tools:context=".Invest">
+        tools:context=".Invest" android:background="@color/white">
 
     <LinearLayout
             android:orientation="vertical"
@@ -48,7 +48,7 @@
                     android:layout_weight="1"
                     tools:ignore="TouchTargetSizeCheck"
                     android:contentDescription="@string/Label_pasw"
-                    android:minWidth="60dp" android:maxWidth="60dp"/>
+                    android:minWidth="60dp" android:maxWidth="60dp" android:backgroundTint="#00FFFFFF"/>
         </LinearLayout>
         <TextView
                 android:text="@string/tInvest"
@@ -82,7 +82,8 @@
                     android:layout_height="wrap_content" app:srcCompat="@drawable/ic_baseline_edit_24"
                     android:id="@+id/editMinVal"
                     android:layout_weight="1" android:contentDescription="@string/minInvest"
-                    tools:ignore="TouchTargetSizeCheck" android:layout_gravity="end"/>
+                    tools:ignore="TouchTargetSizeCheck" android:layout_gravity="end"
+                    android:backgroundTint="#00FFFFFF"/>
         </LinearLayout>
         <TextView
                 android:text="@string/clients"
@@ -111,7 +112,8 @@
             android:text="@string/investimers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/textView35" android:layout_marginBottom="10dp"
-            android:textSize="20sp" android:textStyle="bold" android:gravity="center"/>
+            android:textSize="20sp" android:textStyle="bold" android:gravity="center"
+            android:textColor="@color/greyText"/>
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent" android:id="@+id/ListClients"/>

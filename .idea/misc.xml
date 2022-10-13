@@ -4,20 +4,28 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android_Projects/app/src/main/res/drawable/borderredius.xml" value="0.2315" />
+        <entry key="..\:/Android_Projects/app/src/main/res/drawable/delete.xml" value="0.158" />
+        <entry key="..\:/Android_Projects/app/src/main/res/drawable/eye.xml" value="0.158" />
+        <entry key="..\:/Android_Projects/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.158" />
+        <entry key="..\:/Android_Projects/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.158" />
+        <entry key="..\:/Android_Projects/app/src/main/res/drawable/ic_baseline_money_24.xml" value="0.158" />
+        <entry key="..\:/Android_Projects/app/src/main/res/drawable/ic_baseline_point_of_sale_24.xml" value="0.158" />
         <entry key="..\:/Android_Projects/app/src/main/res/drawable/ic_launcher_background.xml" value="0.192" />
-        <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_add_client.xml" value="0.4" />
+        <entry key="..\:/Android_Projects/app/src/main/res/drawable/menos.xml" value="0.158" />
+        <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_add_client.xml" value="0.25" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_add_fond_money.xml" value="0.2" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_add_invest.xml" value="0.264" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_add_invest_money.xml" value="0.2" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_client1.xml" value="0.2" />
-        <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_detail_client.xml" value="0.33" />
+        <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_detail_client.xml" value="0.25" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_detail_invest.xml" value="0.2" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_edit_ivest_name.xml" value="0.18" />
+        <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_edit_name_c.xml" value="0.22153846153846155" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_edit_name_i.xml" value="0.225" />
-        <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_fond_main.xml" value="0.21" />
+        <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_fond_main.xml" value="0.33" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_fond_with_dr.xml" value="0.25" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_invest.xml" value="0.176" />
-        <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_show_client_movs.xml" value="0.25" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_show_clients.xml" value="0.22" />
         <entry key="..\:/Android_Projects/app/src/main/res/layout/activity_show_invest.xml" value="0.2" />

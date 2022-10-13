@@ -57,7 +57,7 @@
                 android:backgroundTint="#00D50000"
                 android:backgroundTintMode="src_over"
                 android:paddingLeft="10dp"
-                android:background="#D9D9D9"/>
+                android:background="#D9D9D9" android:textColorHint="#757575" tools:ignore="TextContrastCheck"/>
         <TextView
                 android:text="@string/Label_pasw"
                 android:layout_width="match_parent"
@@ -82,7 +82,8 @@
                 android:textColor="#000000"
                 android:backgroundTint="#D9D9D9"
                 android:background="@color/Green"
-                android:paddingLeft="10dp" android:layout_marginBottom="30dp"/>
+                android:paddingLeft="10dp" android:layout_marginBottom="30dp" android:textColorHint="#757575"
+                tools:ignore="TextContrastCheck"/>
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"

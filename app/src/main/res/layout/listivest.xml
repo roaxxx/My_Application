@@ -25,7 +25,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/TextMov"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" android:textColor="@color/greyText"/>
             <TextView
                     android:text="El dorado"
                     android:layout_width="match_parent"
@@ -43,7 +43,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/tClientInvest"
-                    android:textSize="18sp"/>
+                    android:textSize="18sp" android:textColor="@color/greyText"/>
             <TextView
                     android:text="$2400"
                     android:layout_width="match_parent"
@@ -54,10 +54,12 @@
         <ImageButton
                 android:layout_width="42dp"
                 android:layout_height="54dp" app:srcCompat="@drawable/ic_baseline_add_24"
-                android:id="@+id/showID" android:layout_weight="1" android:contentDescription="@string/add"/>
+                android:id="@+id/showID" android:layout_weight="1" android:contentDescription="@string/add"
+                android:backgroundTint="#1DFFFFFF"/>
         <ImageButton
                 android:layout_width="39dp"
                 android:layout_height="54dp" app:srcCompat="@drawable/menos" android:id="@+id/DeleteI"
-                android:layout_weight="1" android:contentDescription="@string/Withdrawal"/>
+                android:layout_weight="1" android:contentDescription="@string/Withdrawal"
+                android:backgroundTint="#1DFFFFFF"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
