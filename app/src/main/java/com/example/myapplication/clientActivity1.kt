@@ -28,9 +28,10 @@ class clientActivity1 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_client1)
         getPreference()
-        val showH = findViewById<Button>(R.id.view_h)
+        val btnWFont = findViewById<Button>(R.id.btnWFont)
         val bundle= intent.extras
         idCard =bundle?.getString("user").toString()
+        btnWFont.setOnClickListener { withdraFromFund()  }
         //LLamados a métodos de petición
         getClientDetail()
         getClientInvestiments()
@@ -44,9 +45,10 @@ class clientActivity1 : AppCompatActivity() {
         intent.putExtra("eMail", idCard)
         startActivity(intent)
     }
-    fun withdraFromFund(view: View){
+    fun withdraFromFund(){
         val intent = Intent(this, FondWithDr::class.java)
         intent.putExtra("tMoney", tMoney)
+        intent.putExtra("eMail", idCard)
         startActivity(intent)
     }
 

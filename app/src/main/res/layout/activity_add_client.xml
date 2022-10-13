@@ -46,7 +46,7 @@
             android:backgroundTint="#00D50000"
             android:backgroundTintMode="src_over"
             android:paddingLeft="10dp"
-            android:background="#D9D9D9" android:inputType="number" android:textColorHint="@color/Hint"
+            android:background="@drawable/borderredius" android:inputType="number" android:textColorHint="@color/Hint"
             tools:ignore="TextContrastCheck" android:textColor="@color/black"/>
     <TextView
             android:text="@string/E_mail"
@@ -73,7 +73,7 @@
             android:fontFamily="@font/roboto"
             android:minHeight="48dp"
             android:backgroundTintMode="src_over"
-            android:background="#D9D9D9"
+            android:background="@drawable/borderredius"
             android:paddingLeft="10dp"
             android:hint="Dirección de correo"
             android:autofillHints="" android:textColorHint="@color/Hint" tools:ignore="TextContrastCheck"
@@ -104,7 +104,7 @@
             android:fontFamily="@font/roboto"
             android:minHeight="48dp"
             android:hint="Nombre completo"
-            android:background="#D9D9D9"
+            android:background="@drawable/borderredius"
             android:backgroundTintMode="src_over"
             android:autofillHints="" android:textColorHint="@color/Hint" tools:ignore="TextContrastCheck"
             android:textColor="@color/black"/>
@@ -132,7 +132,7 @@
             android:textSize="20sp"
             android:paddingStart="10dp"
             android:fontFamily="@font/roboto"
-            android:background="#D9D9D9"
+            android:background="@drawable/borderredius"
             android:backgroundTintMode="src_over"
             android:minHeight="48dp"
             android:hint="Contraseña nueva"
@@ -163,7 +163,7 @@
             android:backgroundTint="#00D50000"
             android:backgroundTintMode="src_over"
             android:paddingLeft="10dp"
-            android:background="#D9D9D9"
+            android:background="@drawable/borderredius"
             android:layout_marginBottom="15dp" android:textColorHint="@color/Hint" tools:ignore="TextContrastCheck"
             android:textColor="@color/black"/>
     <Button

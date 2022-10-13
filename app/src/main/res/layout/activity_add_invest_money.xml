@@ -8,7 +8,8 @@
         android:orientation="vertical"
         android:gravity="center"
         android:paddingHorizontal="60dp"
-        tools:context=".add_investMoney" android:background="@color/white">
+        tools:context=".add_investMoney" android:background="@color/white" android:paddingBottom="40dp"
+        android:paddingTop="0dp">
 
     <TextView
             android:text="@string/nIvest"
@@ -44,6 +45,17 @@
             android:fontFamily="@font/roboto"
             android:textStyle="bold"/>
     <TextView
+            android:text="@string/min_invest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/textView26" android:layout_marginBottom="20dp"
+            android:textSize="24sp" android:textStyle="bold" android:gravity="center"
+            android:textColor="@color/greyText"/>
+    <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/minVal" android:layout_marginBottom="20dp"
+            android:textSize="32sp" android:gravity="center" android:textColor="@color/black"/>
+    <TextView
             android:text="@string/nInvestVal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/textView9" android:layout_marginBottom="20dp"
@@ -66,5 +78,5 @@
             android:backgroundTint="@color/Green"
             android:textAllCaps="false"
             android:id="@+id/btnAddMI" android:fontFamily="@font/roboto" android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" android:onClick="evalutateRange"/>
 </LinearLayout>

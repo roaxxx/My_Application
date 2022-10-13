@@ -51,7 +51,10 @@ class show_Invest : AppCompatActivity() {
                         var jsonObject=jsonArray.getJSONObject(i)
                         sInvest.add(ListIAnvestE(jsonObject.getString("name_investiment"),
                             jsonObject.getString("invested"),
-                            jsonObject.getString("e_mail")))
+                            jsonObject.getString("e_mail"),
+                            jsonObject.getString("min_value")
+                            )
+                        )
                     }
                     initRecyclerView(sInvest)
                 }

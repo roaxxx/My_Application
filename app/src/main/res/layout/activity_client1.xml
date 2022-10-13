@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".clientActivity1"
-        android:backgroundTint="#FFFFFF" android:onClick="withdraFromFund">
+        android:backgroundTint="#FFFFFF">
 
     <LinearLayout
             android:orientation="vertical"
@@ -64,10 +64,10 @@
                     android:layout_marginBottom="5dp" android:textStyle="bold" android:textColor="@color/greyText"/>
             <LinearLayout
                     android:orientation="horizontal"
-                    android:layout_width="310dp"
-                    android:layout_height="wrap_content">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:gravity="center">
                 <TextView
-                        android:layout_width="235dp"
+                        android:layout_width="245dp"
                         android:layout_height="match_parent"
                         android:id="@+id/cap_fond"
                         android:textColor="#000000"
@@ -78,10 +78,10 @@
                 <Button
                         android:text="Retirar"
                         android:layout_width="0dp"
-                        android:layout_height="30dp" android:id="@+id/btnWFont" android:layout_weight="1"
+                        android:layout_height="30dp" android:id="@+id/btnWFont" android:layout_weight="0.5"
                         android:textAllCaps="false" android:textSize="10sp" android:textColor="@color/client_color"
                         android:backgroundTint="#00FFFEFE" android:background="#00FFFFFF"
-                        tools:ignore="TouchTargetSizeCheck" android:onClick="withdraFromFund"/>
+                        tools:ignore="TouchTargetSizeCheck"/>
             </LinearLayout>
             <TextView
                     android:text="@string/L_fond_cap_iv"

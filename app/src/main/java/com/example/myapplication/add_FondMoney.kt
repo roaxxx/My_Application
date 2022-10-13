@@ -50,7 +50,7 @@ class add_FondMoney : AppCompatActivity() {
     //Consulta las inversiones disponibles
     private fun getInvestiments() {
         val queue = Volley.newRequestQueue(this)
-        val url2 = "http://$ipV4:8081/API_REST_BD_CON/admin/investiments/ashowinvest.php"
+        val url2 = "http://$ipV4:8081/API_REST_BD_CON/client/listtoinvest.php?eMail=$eMail"
         val jsRequest2 = JsonObjectRequest(
             Request.Method.GET,url2,null,
             { response ->
@@ -58,9 +58,13 @@ class add_FondMoney : AppCompatActivity() {
                     var jsonArray=response.getJSONArray("data")
                     for(i in 0 until jsonArray.length()){
                         var jsonObject=jsonArray.getJSONObject(i)
-                        sInvest.add(ListIAnvestE(jsonObject.getString("name_investiment"),
+                        sInvest.add(ListIAnvestE(
+                            jsonObject.getString("name_investiment"),
                             jsonObject.getString("invested"),
-                            jsonObject.getString("e_mail")))
+                            jsonObject.getString("e_mail"),
+                            jsonObject.getString("min_value")
+                            )
+                        )
                     }
                     initRecyclerView(sInvest)
                 }
@@ -88,9 +92,9 @@ class add_FondMoney : AppCompatActivity() {
         intent!!.putExtra("eMail", sInvest[i].email)
         intent!!.putExtra("eMailc", eMail)
         intent!!.putExtra("name", sInvest[i].nameI)
+        intent!!.putExtra("minValue", sInvest[i].minVal)
         startActivity(intent)
     }
-
 
     //Consignar dinero a la cuenta cliente
     private fun addFontMoney(i: Int) {
